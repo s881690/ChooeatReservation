@@ -1,0 +1,16 @@
+div.footer_container {
+  background-color: blanchedalmond;
+}
+div.footer_container footer ul li.nav-item a {
+  color: black !important;
+}
+div.footer_container footer ul li.nav-item a:hover {
+  font-weight: bolder;
+  color: orange !important;
+}
+div.footer_container footer p {
+  color: black !important;
+}
+div.footer_container footer p:hover {
+  font-weight: bolder;
+}/*# sourceMappingURL=footer.css.map */

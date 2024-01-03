@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <title>CHOOEAT！</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="./images/header/logo2.png" />
+    <!-- 引入bootstrap -->
+    <link rel="stylesheet" href="./styles/bootstrap/bootstrap.min.css" />
+
+    <!-- 以下引入我們自己寫的css -->
+    <link rel="stylesheet" href="./styles/activity/activity.css" />
+    <!-- <link rel="stylesheet" href="./styles/all/all.css" /> -->
+    <link rel="stylesheet" href="../prod/chooeat/styles/header/footer.css" />
+    <link rel="stylesheet" href="../prod/chooeat/styles/header/header.css" />
+
+    <!-- 引入Font awesome -->
+    <script
+      src="https://kit.fontawesome.com/956a3e277d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header></header>
+
+    <!-- 以下為內容區域，主要對這裡做修改 -->
+    <div class="main_content mb-5">
+      <div class="activity_main_detail">
+        <div class="container">
+          <!-- 麵包屑與搜尋框 -->
+          <div class="row bread_and_search">
+            <!-- 麵包屑 -->
+            <nav
+              class="col"
+              style="--bs-breadcrumb-divider: '>'"
+              aria-label="breadcrumb"
+            >
+              <ol class="breadcrumb pt-3 ps-3">
+                <li class="breadcrumb-item">
+                  <a href="#" class="normal_a">首頁</a>
+                </li>
+                <li class="breadcrumb-item" aria-current="page">
+                  <a href="./activity.html" class="normal_a">揪團</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  活動資訊
+                </li>
+              </ol>
+            </nav>
+
+            <!-- 搜尋框 -->
+            <!-- 因Java有將靜態檔案設定映射名稱與前綴字，因此不用加"activity/"-->
+            <form class="col search" name="search_value">
+              <input
+                type="text"
+                class="search_value rounded-3"
+                name="search_value"
+                placeholder="搜尋..."
+              />
+              <!-- <input type="hidden" class="search_value" /> -->
+              <button type="submit" class="submit">
+                <img src="./images/search_icon.png" alt="search_icon" />
+              </button>
+            </form>
+          </div>
+
+          <!-- 活動詳細資訊 -->
+          <!-- 圖片 -->
+          <div class="row mt-5">
+            <div class="col activity_img" style="height: 40vh">
+              <img
+                src="./images/reservation_image/res_exp.png"
+                alt="活動上傳照片"
+                class="activity_img"
+              />
+            </div>
+          </div>
+
+          <!-- 活動標題 -->
+          <div class="row align-items-center mt-5 mb-5">
+            <div class="col">
+              <h1 class="activity_title">咖啡廳聚餐去!</h1>
+              <!-- 檢舉鈕放這 -->
+            </div>
+          </div>
+
+          <!-- 活動詳細資訊 -->
+          <div class="row activity_detail shadow p-5">
+            <!-- 活動內容 -->
+            <div class="col-7 activity_info">
+              <div class="location mb-5">
+                <!-- 帶後端資料 -->
+                <p>10人已報名參加</p>
+                <p>地點：104506台北市中山區南京東路三段219號5樓</p>
+                <p>20xx年x月x日 18:00</p>
+              </div>
+
+              <!-- 活動簡介 -->
+              <div class="activity_introtext mb-5">
+                <!-- 帶後端資料 -->
+                <h3 class="mb-5 text-center fw-bolder">活動簡介</h3>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Aliquam perferendis omnis error? Tenetur dicta suscipit fugit
+                corrupti, nisi fuga cupiditate atque cum debitis iste tempora.
+                Quo error totam ea dolore!
+              </div>
+            </div>
+
+            <!-- 報名、檢舉、googlemap等側邊攔 -->
+            <aside class="col-5 border-start ps-5">
+              <div class="btns mb-5">
+                <div class="mb-2 signup row">
+                  <!-- 認識主辦人 -->
+                  <div class="activity_host row align-items-center">
+                    <!-- <div class="col">
+                      <h3 class="fw-bolder">認識主辦人</h3>
+                    </div>
+                    <div class="col">
+                      <img
+                        src="https://fakeimg.pl/250x250/"
+                        alt="大頭照"
+                        class="border rounded-circle img-fluid"
+                      />
+                    </div> -->
+                  </div>
+
+                  <div
+                    class="btn btn-outline-info col outter_signup signup_and_edit mt-5"
+                    data-bs-toggle="modal"
+                    data-bs-target="#signup"
+                  >
+                    報名
+                  </div>
+
+                  <!-- <div class="btn btn-outline-success pe-2 col">邀請好友</div> -->
+                  <!-- 報名彈窗 -->
+                  <div
+                    class="modal fade"
+                    id="signup"
+                    tabindex="-1"
+                    aria-labelledby="signup"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="signup">報名</h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <!-- action導向接收該段文字的java程式(某個DAO) -->
+                        <form class="modal-body" method="get" action="#">
+                          <textarea
+                            class="rounded-3"
+                            name="toHost"
+                            id="toHost"
+                            cols="55"
+                            rows="10"
+                            placeholder="輸入想說的話..."
+                          ></textarea>
+                          <div class="modal-footer">
+                            <button
+                              type="reset"
+                              class="btn btn-secondary"
+                              data-bs-dismiss="modal"
+                            >
+                              取消
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-primary confirm"
+                            >
+                              確認
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="other_btns row">
+                  <!-- <div class="btn btn-outline-success pe-2">邀請好友</div>
+                  <div class="btn btn-outline-danger">檢舉</div> -->
+                </div>
+              </div>
+              <div class="map mb-5 rounded-3" id="map">
+                <!-- <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28915.742638962303!2d121.50720401083981!3d25.052128000000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab90d642cdc1%3A0x1459df8556710135!2z57ev6IKyVGliYU1l5Y-w5YyXSmF2YeWwsealremkiuaIkOePrQ!5e0!3m2!1szh-TW!2stw!4v1683096121251!5m2!1szh-TW!2stw"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  class="w-100 h-100 rounded"
+                ></iframe> -->
+              </div>
+
+              <!-- 邀請好友列表 -->
+              <!-- <div class="list-group invite_friends">
+                <h3 class="text-center">邀請你的飯友</h3>
+                <div class="list-group-item list-group-item-action">
+                  <img class="me-3" src="" alt="大頭照" />
+                  <p>用戶名稱</p>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <img class="me-3" src="" alt="大頭照" />
+                  <p>用戶名稱</p>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <img class="me-3" src="" alt="大頭照" />
+                  <p>用戶名稱</p>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <img class="me-3" src="" alt="大頭照" />
+                  <p>用戶名稱</p>
+                </div>
+              </div> -->
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--footer-->
+    <div class="container-fluid footer_container"></div>
+
+    <!-- 引入 Bootstrap JS -->
+    <script src="./js/bootstrap/bootstrap.min.js"></script>
+    <!-- 引入 JQ -->
+    <script src="./js/vendors/jquery/jquery-3.4.1.min.js"></script>
+    <!-- 引入 自訂 JS -->
+    <script src="./js/activity/header.js"></script>
+    <script src="./js/activity/footer.js"></script>
+    <script src="./js/activity/activity_detail.js"></script>
+    <script src="./js/activity/activity_login.js"></script>
+    <script
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkEiyAHe2LCJvgDJ-F4aY5xBaPRNWmsFg&callback=initMap"
+    ></script>
+  </body>
+</html>

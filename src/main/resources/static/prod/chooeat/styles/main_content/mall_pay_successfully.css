@@ -1,0 +1,115 @@
+* {
+	Box-sizing: border-box;
+}
+
+div.parent_container {
+	/* border:1px solid red; */
+	width: 100%;
+	margin: 10px auto 20px auto;
+	font-size: 0;
+}
+/* ===================== Top ===================== */
+div.breadcrumbandSearch span {
+	/* vertical-align: buttom; */
+	display: inline-block;
+}
+
+nav.breadcrumbandSearch {
+	font-size: 24px;
+	display: inline-block;
+}
+/* ======== 麵包屑 ======== */
+ol.breadcrumb {
+	font-size: 20px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+.breadcrumb-item.active {
+	color: orange;
+	font-weight: bold;
+}
+/* ======== 搜尋 ======== */
+div.search_area {
+	position: relative;
+	float: right;
+	width: 200px;
+	height: 30px;
+	margin: 5px 10px;
+	border-radius: 12px;
+}
+
+input.search {
+	border: 1px solid gray;
+	background-color: white;
+	border-radius: 12px;
+	float: right;
+	width: 200px;
+	height: 30px;
+	margin: 0px;
+}
+
+input.search_button {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	margin: 5px 10px;
+	right: 0;
+}
+
+/* ===================== main ===================== */
+main.main {
+	/* border:1px solid green; */
+	font-size: 16px;
+}
+/* ======== prod ======== */
+div.prod {
+	border: 1px solid gray;
+	border-radius: 10px;
+	height: 130px;
+	padding: 15px;
+	margin: 0px;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+div.content {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+div.content div {
+	vertical-align: middle;
+}
+
+div.prodTitle {
+	font-size: 24px;
+	display: inline-block;
+}
+
+img.checked {
+	width: 25px;
+	vertical-align: middle;
+}
+
+button {
+	border: none;
+	background-color: #FFDEB9;
+	border-radius: 10px;
+	float: right;
+	width: 200px;
+	height: 40px;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+
+button:hover {
+	background-color: #F5F5F5;
+}

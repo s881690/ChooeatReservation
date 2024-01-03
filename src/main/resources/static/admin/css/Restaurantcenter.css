@@ -1,0 +1,61 @@
+/*搜尋餐廳頁面*/
+.main_content {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;  
+    }
+    /*版面相關*/
+    .nav-pills .nav-link {
+    color: #555;
+    width: 210px;
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 40px;
+    font-weight: 500;
+    }
+    .nav-pills .nav-link:hover, .nav-pills .nav-link:focus {
+    border-radius: 20px;
+    width: 210px;
+    color: black;  
+    }
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    border-radius: 20px;
+    width: 250px;
+    color:black;
+    background-color:blanchedalmond;
+    }
+  
+    .tab-content {
+    background-color: #fff; 
+    padding: 20px; 
+    border-top: none;
+    }
+    .tab-pane {
+    display: none;
+    visibility: hidden;
+    }
+    .tab-pane.active {
+    display: block;
+    visibility: visible;
+    }
+    #comment{     
+    border: 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 15px rgba(81, 81, 81, 0.2);}
+  
+  
+  
+    .custab{
+      border: 1px solid #ccc;
+      padding: 5px;
+      margin: 5% 0;
+      box-shadow: 3px 3px 2px #ccc;
+      transition: 0.5s;
+      }
+  .custab:hover{
+      box-shadow: 3px 3px 0px transparent;
+      transition: 0.5s;
+      }

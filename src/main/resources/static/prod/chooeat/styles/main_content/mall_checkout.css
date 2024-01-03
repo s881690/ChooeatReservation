@@ -1,0 +1,252 @@
+* {
+	Box-sizing: border-box;
+}
+
+div.parent_container {
+	/* border:1px solid red; */
+	width: 100%;
+	margin: 10px auto 20px auto;
+	font-size: 0;
+}
+/* ===================== Top ===================== */
+div.breadcrumbandSearch span {
+	/* vertical-align: buttom; */
+	display: inline-block;
+}
+
+nav.breadcrumbandSearch {
+	font-size: 24px;
+	display: inline-block;
+	text-decoration: none;
+	color: #333;
+}
+/* ======== 麵包屑 ======== */
+ol.breadcrumb {
+	font-size: 20px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+.breadcrumb-item.active {
+	color: orange;
+	font-weight: bold;
+}
+/* ======== 搜尋 ======== */
+div.search_area {
+	position: relative;
+	float: right;
+	width: 200px;
+	height: 30px;
+	margin: 5px 10px;
+	border-radius: 12px;
+}
+
+input.search {
+	border: 1px solid gray;
+	background-color: white;
+	border-radius: 12px;
+	float: right;
+	width: 200px;
+	height: 30px;
+	margin: 0px;
+}
+
+input.search_button {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	margin: 5px 10px;
+	right: 0;
+}
+
+/* ===================== main ===================== */
+main.main {
+	/* border:1px solid green; */
+	font-size: 16px;
+}
+/* ======== prod ======== */
+div.prod {
+	border: 1px solid gray;
+	border-radius: 10px;
+	padding: 15px;
+	margin-bottom: 10px;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+button.delete {
+	float: right;
+}
+
+table {
+	/* border: 1px solid gray; */
+	width: 97%;
+	margin: 10px;
+	left: 0%;
+	transform: translate(0.8%);
+}
+
+table th:not(:first-child) {
+	text-align: center;
+}
+
+table td {
+	/* border: 1px solid gray; */
+	padding: 10px 10px 10px 10px;
+}
+
+table td:not(:first-child, :nth-child(2)) {
+	text-align: center;
+}
+
+span.prodTitle {
+	font-size: 24px;
+	margin-right: 500px;
+}
+
+span.price {
+	font-size: 24px;
+	float: right;
+	margin: 0 20px;
+}
+
+img.pord_img {
+	width: 130px;
+	height: 100px;
+	/* float: right; */
+	border-radius: 10px;
+	object-fit: cover;
+}
+/* coupon */
+div.coupon_area {
+	border: 1px solid gray;
+	border-radius: 10px;
+	padding: 15px;
+	margin-top: 10px;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+input.coupon_text {
+	border: 0;
+	background-color: #F5F5F5;
+	width: 100%;
+	height: 40px;
+	/* margin: 5px 10px; */
+	padding: 0 0 0 10px;
+	border-radius: 4px;
+}
+
+div.coupon_use {
+	position: relative;
+	width: 500px;
+	margin: 5px 10px;
+	/* padding: 5px;  */
+	/* background-color: red; */
+	display: inline-block;
+}
+
+button.coupon_button {
+	border: none;
+	background-color: #FFDEB9;
+	border-radius: 4px;
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	right: 0;
+}
+
+button.coupon_choose_button {
+	border: none;
+	background-color: #FFDEB9;
+	border-radius: 8px;
+	width: 200px;
+	height: 40px;
+	float: right;
+	margin-right: 10px;
+}
+
+button:hover {
+	background-color: #FFDEB9;
+}
+/* pay */
+div.pay_area {
+	border: 1px solid gray;
+	border-radius: 10px;
+	padding: 15px;
+	margin-top: 10px;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+div.credit_area {
+	background-color: #F5F5F5;
+	height: 80px;
+	padding: 24px;
+}
+
+div.credit_area h4, input, span {
+	vertical-align: middle;
+}
+
+div.credit_area input {
+	border: none;
+/* 	margin-right: 20px; */
+	height: 35px;
+	border-radius: 5px;
+/* 	padding-left: 10px; */
+}
+
+input.credit_number {
+	width: 100px;
+	margin-left: 5px;
+	text-align: center;
+    letter-spacing: 0.6em;
+}
+
+input.credit_date {
+	width: 200px;
+	margin-left: 20px;
+	text-align: center;
+    letter-spacing: 0.1em;
+}
+
+input.credit_security {
+	margin-left: 20px;
+	width: 90px;
+	text-align: center;
+    letter-spacing: 0.6em;
+}
+
+div.pay_check_area {
+	/* border: 1px solid gray; */
+	vertical-align: middle;
+	/* width: 95%; */
+}
+
+button.pay_check_btn {
+	border: none;
+	background-color: #FFDEB9;
+	border-radius: 8px;
+	width: 300px;
+	height: 60px;
+	float: right;
+	margin-right: 20px;
+	margin-top: 15px;
+	font-size: 24px;
+}
+
+span.pay_check_text {
+	/* border: 1px solid gray; */
+	height: 50px;
+	width: 670px;
+	margin: 20px;
+	margin-left: 50px;
+	display: inline-block;
+}

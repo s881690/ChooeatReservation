@@ -1,0 +1,13 @@
+/********** main_content **********/
+div#login{
+    background-color: white;
+}
+div#login > figure{
+    font-size: 20px;
+}
+figure#welcomeText > p{
+    display: inline-block;
+}
+body{
+    background-color: #f5f5f5;
+}

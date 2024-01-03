@@ -1,0 +1,131 @@
+body{
+    background-color: #f5f5f5;
+}
+
+/********** header **********/
+.navbar{
+    background-color: white;
+}
+a#title{
+    font-size: 28px;
+    margin: 0 0 0 30px;
+}
+#navbarDropdown{
+    font-size: 18px;
+}
+li a {
+    color: black !important;
+    font-size: 18px;
+}
+li a:hover{
+    background-color: #ffdeb9;
+    border-radius: 5px;
+}
+#adminPage{
+    padding: 5px 10px 0 10px;
+}
+
+#adminPage:hover{
+    background-color: #ffdeb9;
+    border-radius: 5px;
+}
+
+.navbar-nav li:hover > ul.dropdown-menu{
+    display: block;
+    border-radius: 5px;
+}
+ul li{
+    margin: 0 20px 0 20px;
+}
+span#accName{
+    font-size: 18px;
+    font-weight: 600;
+}
+.dropdown-item:focus {
+    background-color: #ffdeb9;
+    border-radius: 5px;
+}
+
+/********** table **********/
+html, body{
+    height: 100%;
+}
+.searchBtn{
+    background-color: white;
+}
+div.main_content{
+    margin-top: 70px;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.tableName{
+    padding: 20px 0 10px 0;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchBar{
+    padding: 10px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.tableContent{
+    background-color: white;
+    padding: 10px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+
+    flex: 1;
+}
+th, tr, td{
+    text-align: center;
+    vertical-align: middle;
+}
+.pagination li{
+    margin: 0 5px;
+}
+div#listCount p {
+    display: inline-block;
+}
+.stateBtn, .editBtn, .deleteBtn{
+    background-color: white;
+}
+#registerBtn, #confirmEditBtn{
+    border: 1px solid white;
+    background-color: orange;
+}
+#plate{
+    background-color: white;
+}
+.page-item.active .page-link{
+    background-color: orange;
+    border: 1px solid white;
+}
+.pageBtn:hover{
+    cursor: pointer;
+}
+div#deleteMsg p {
+    display: inline-block;
+}
+
+i.deleteBtn{
+    transition: transform 0.3s ease;
+    background-color: transparent;
+}
+i.deleteBtn:hover{
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+
+/********** footer **********/
+footer{
+    background-color: #fae6b1;
+    font-weight: 600;
+}

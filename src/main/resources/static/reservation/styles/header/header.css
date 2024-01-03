@@ -1,0 +1,50 @@
+header {
+	background-color: white;
+	/* 設定固定寬，在進行RWD設計之前不可移除，同樣設定會出現在內容區塊的DIV標籤及FOOTER */
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding-bottom: 0px;
+	margin-bottom: 30px;
+	border-bottom: 1px solid gray;
+
+}
+.nav-item {
+  font-family:serif,sans-serif,monospace;
+    font-weight: 500;
+     font-size: 20px;
+ 
+}
+
+header nav.navbar div.container a {
+	font-size: 1rem;
+	color: black;
+	/* border: 1px solid red; */
+	
+}
+
+header nav.navbar div.container a:hover {
+	color: orange;
+	font-weight: 800;
+}
+
+a.icon {
+	/* border: 1px solid purple; */
+	margin-right: 10px !important;
+}
+
+.navbar-brand {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-brand .logo2 {
+	max-width: 50px;
+	max-height: 50px;
+	margin-right: 15px !important;
+}
+
+.navbar-brand h4 {
+	margin: 0;
+	line-height: 1;
+}

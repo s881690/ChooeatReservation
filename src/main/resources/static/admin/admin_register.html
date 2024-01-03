@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理員註冊</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/5c840decb8.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/admin_util.css">
+    <link rel="shortcut icon" href="images/header/logo2.png">
+</head>
+<body>
+    <script type="text/javascript" src="js/header.js"></script>
+
+    <div class="main_content">
+        <div class="container">
+            <div class="row justify-content-center mt-5 mb-5">
+                <div class="col-8 col-lg-5 rounded p-4 shadow rounded" id="plate">
+                    <div class="row">
+                        <p class="text-center fw-bold fs-2" id="registerText">新管理員註冊</p>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="pic" style="display: flex; justify-content: center; align-items: center;">
+                            <img src="images/header/logo2.png" style="max-width: 80%; max-height: 80%;">
+                        </div>
+                    </div>
+                    <form action="adminLogin" method="post">
+                        <div class="row mb-3">
+                            <label for="InputAccount" class="col-md-4 col-form-label">帳號</label>
+                            <div class="col-md-8">
+                                <input class="form-control" id="adminAcc" name="adminAcc">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="InputPassword" class="col-md-4 col-form-label">密碼</label>
+                            <div class="col-md-8">
+                                <input class="form-control" id="adminPass" name="adminPass" type="password">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="InputPassword" class="col-md-4 col-form-label">再次確認密碼</label>
+                            <div class="col-md-8">
+                                <input class="form-control" id="confirmPass" name="confirmPass" type="password">
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label for="InputPassword" class="col-md-4 col-form-label">管理員名稱</label>
+                            <div class="col-md-8">
+                                <input class="form-control" id="adminName" name="adminName">
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label for="InputPassword" class="col-md-4 col-form-label">管理員權限</label>
+                            <div class="col-md-8">
+                                <select class="form-select" id="adminPermission" name="adminPermission">
+                                    <option selected value="10">僅可查詢</option>
+                                    <option value="20">可編輯</option>
+                                    <option value="30">總管理員</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-12 mb-3 text-center" id="errBox" hidden>
+                                <div class="error" id="errMsg" style="color: red"></div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <button type="button" class="btn btn-primary col-4 col-md-3" id="registerBtn">註冊</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/footer.js"></script>
+
+    <script>
+        const adminAcc = $("#adminAcc");
+        const adminPass = $("#adminPass");
+        const confirmPass = $("#confirmPass");
+        const adminName = $("#adminName");
+        const adminPermission = $("#adminPermission");
+        const errMsg = $("#errMsg");
+        const errBox = $("#errBox");
+
+        $("#registerBtn").on("click", () => {
+            const accLength = adminAcc.val().length;
+            if (accLength < 6 || accLength > 30) {
+                errMsg.text("帳號長度須介於6~30字元");
+                errBox.removeAttr("hidden");
+                return;
+		    }
+
+            const passLength = adminPass.val().length;
+            if (passLength < 6 || passLength > 12) {
+                errMsg.text("密碼長度須介於6~12字元");
+                errBox.removeAttr("hidden");
+                return;
+            }
+
+            if (confirmPass.val() !== adminPass.val()) {
+                errMsg.text("密碼與確認密碼不相符");
+			    errBox.removeAttr("hidden");
+			    return;
+		    }
+
+            const nameLength = adminName.val().length;
+            if (nameLength < 1 || nameLength > 10) {
+                errMsg.text("管理員名稱長度須介於1~10字元");
+                errBox.removeAttr("hidden");
+                return;
+            }
+
+            fetch("/admin/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    adminAcc: adminAcc.val(),
+                    adminPass: adminPass.val(),
+                    adminName: adminName.val(),
+                    adminPermission: adminPermission.val()
+                })
+            })
+                .then(res => res.json())
+                .then(body => {
+                    errMsg.textContent = "";
+                    errBox.attr("hidden");
+                    const { successful, message } = body;
+
+                    if (successful){
+                        alert("註冊成功!");
+                        location = "admin_admin.html";
+                    } else {
+                        errBox.removeAttr("hidden");
+                        errMsg.text(message);
+                    }
+                });
+        });
+
+    </script>
+
+</body>
+</html>

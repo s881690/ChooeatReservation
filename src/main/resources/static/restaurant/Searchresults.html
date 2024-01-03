@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <title>CHOOEAT！</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- 引入bootstrap5 ,以及漢堡下拉式選單-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="./vendors/jQuery_3.6.4.js"></script>
+    <!-- 引入bootstrap5 ,下拉式選單-->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+    <!-- 引入Font Awesome 套件 -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <!-- 這裡需要修改 -->
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/all.css" />
+    <link rel="stylesheet" href="./css/Searchresults.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- 設定導覽列標籤在桌機以上size展開 -->
+      <nav class="navbar navbar-expand-lg" id="navbar">
+        <!-- div class="container-fluid"置中且滿版 -->
+        <div class="container">
+          <!-- .navbar-brand 標示為公司，產品或專案名稱。
+              這裡放的是chooeat文字logo
+                      這裡的連結之後要改，跳轉到首頁
+                  內包超連結，超連結裡面包圖片，讓使用者點圖片跳轉 -->
+          <a class="navbar-brand" href="#">
+            <img src="./images/logo2.png" class="logo2" />
+            <h4>C H O O E A T ！</h4>
+          </a>
+          <!-- order-lg-last在bootstrap框架中是設定在父元素的排列順序，last的意思是會在最後面
+                      function_icons只代表這個class的名稱 -->
+          <div class="function_icons order-lg-last">
+            <!-- "mb-0" 類用於指定此元素的外邊距（margin）為 0。 
+                      "d-flex" 類用於指定此元素為一個彈性盒子，即在此元素內部的所有子元素將以一個方向排列
+                      ，並且可以通過 justify-content 和 align-items 屬性來調整它們之間的間距和位置。 -->
+            <p class="mb-0 d-flex">
+              <!-- "d-flex" 類用於指定此元素為一個彈性盒子，它將允許 "align-items-center" 
+                              和 "justify-content-center" 屬性來垂直和水平居中其內部的子元素。 
+                              "align-items-center" 類用於垂直居中，"justify-content-center" 類
+                              用於水平居中。 -->
+              <!-- 以下3個a標籤，包的是聊天視窗、購物車、會員登入的小icon -->
+              <!-- 						<a href="#" -->
+              <!-- 							class="d-flex align-items-center justify-content-center mr-1 icon"> -->
+              <!-- 							<img src="./chooeat/images/header/chat_icon.png" /> -->
+              <!-- 						</a>  -->
+              <a
+                href="../prod/mall_shopping_cart.html"
+                class="d-flex align-items-center justify-content-center mr-1 icon"
+              >
+                <img
+                  style="width: 40px; height: 40px; margin-right: 5px"
+                  src="./images/carts.png"
+                />
+              </a>
+              <a
+                href="../account/login.html"
+                class="accountIcon"
+                class="d-flex align-items-center justify-content-center mr-1 icon"
+              >
+                <img
+                  style="width: 40px; height: 40px; margin-right: 5px"
+                  src="./images/profile.png"
+                />
+              </a>
+              <span
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  vertical-align: middle;
+                  margin-left: 10px;
+                "
+                id="sname"
+              ></span>
+            </p>
+          </div>
+          <!-- 這個button是漢堡選單的menu按鈕 -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#ftco-nav"
+            aria-controls="ftco-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="fa fa-bars"></span> Menu
+          </button>
+          <!-- 以下為header各分區的標題連結 -->
+          <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul
+              class="navbar-nav d-flex align-items-center justify-content-center"
+              style="gap: 1rem"
+            >
+              <li class="nav-item">
+                <a
+                  href="../restaurant/Homepage.html"
+                  class="nav-link"
+                  style="margin-left: 100px"
+                  >首頁</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="../restaurant/Homepage.html" class="nav-link"
+                  >找餐廳</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="../prod/mall.html" class="nav-link">找餐券</a>
+              </li>
+              <li class="nav-item">
+                <a href="../activity/activity.html" class="nav-link">揪團</a>
+              </li>
+              <li class="nav-item">
+                <a href="../prod/aboutUs.html" class="nav-link">關於我們</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- 以下為內容區域，主要對這裡做修改 -->
+    <div class="main_content">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="col-sm-2">
+              <a href="../restaurant/Homepage.html">首頁></a>
+              <a href="../restaurant/Homepage.html">找餐廳></a>
+              <a href="#">搜尋結果</a>
+            </div>
+            <div class="col-sm-3">
+              <form
+                action="searchrestaurantbyname"
+                method="get"
+                accept-charset="UTF-8"
+              >
+                <div>
+                  <input type="text" id="search_input" name="search_input" />
+                  <label for="search_input">
+                    <i class="fas fa-search" id="search_icon"></i>
+                  </label>
+                </div>
+              </form>
+            </div>
+            <div class="col-sm-2" id="head_midieum">
+              <h1>熱門分類</h1>
+            </div>
+            <div class="col-sm-5">
+              <button class="kind tag" value="火鍋">
+                <a href="#"></a>火鍋
+              </button>
+              <button class="kind tag" value="日式">
+                <a href="#"></a>日式
+              </button>
+              <button class="kind tag" vvalue="韓式">
+                <a href="#"></a>韓式
+              </button>
+              <button class="kind tag" value="越式">
+                <a href="#"></a>越式
+              </button>
+              <button
+                type="button"
+                class="btn dropdown-toggle"
+                data-bs-toggle="dropdown"
+              >
+                其他分類
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item tag" href="#" value="速食">速食</a>
+                <a class="dropdown-item tag" href="#" value="壽司">壽司</a>
+                <a class="dropdown-item tag" href="#" value="鐵板燒">鐵板燒</a>
+                <a class="dropdown-item tag" href="#" value="便當">便當</a>
+                <a class="dropdown-item tag" href="#" value="炸物">炸物</a>
+                <a class="dropdown-item tag" href="#" value="壽喜燒">壽喜燒</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7" id="card_botton">
+          <!-- <button
+            type="button"
+            class="btn dropdown-toggle"
+            data-bs-toggle="dropdown"
+          >
+            排序方式
+          </button>
+          <div class="dropdown-menu">
+            <button class="dropdown-item" href="#">評價數量</button>
+            <button class="dropdown-item" href="#">評分高低</button>
+          </div> -->
+          <div class="list-group-item overflow-auto">
+            <div class="card">
+              <div class="row" id="aaa"></div>
+            </div>
+            <div class="container" id="page-item">
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <div id="map" style="height: 500px; border-radius: 20px"></div>
+        </div>
+      </div>
+    </div>
+    <!-- class="navbar-fixed-bottom"讓footer置底 -->
+    <div class="container-fluid footer_container">
+      <footer>
+        <ul
+          class="nav justify-content-center border-bottom pb-3 mb-3 py-2 my-2"
+        >
+          <li class="nav-item">
+            <a
+              href="../restaurant/Homepage.html"
+              class="nav-link px-4 text-muted"
+              >首頁</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="../restaurant/Homepage.html"
+              class="nav-link px-4 text-muted"
+              >找餐廳</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="../prod/mall.html" class="nav-link px-4 text-muted"
+              >找餐券</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="../activity/activity.html" class="nav-link px-4 text-muted"
+              >揪團</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="../activity/activity.html" class="nav-link px-4 text-muted"
+              >商家申請</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="../prod/aboutUs.html" class="nav-link px-4 text-muted"
+              >關於我們</a
+            >
+          </li>
+        </ul>
+        <p class="text-center text-muted mb-0 py-2 my-3">
+          CopyRight &copy; THA101 G4
+        </p>
+      </footer>
+    </div>
+    <script src="./js/Searchresults.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDB7Lz0rTZxTEc36kDb_8C4zb18Z6MIHO8&callback=initMap"
+      async
+      defer
+    ></script>
+  </body>
+</html>

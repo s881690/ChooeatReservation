@@ -1,0 +1,131 @@
+/*版面配置*/
+a{
+  text-decoration:none;
+  color: black;
+}
+div>a {
+  color: #060606; 
+    display: inline-block;
+  }  
+  h1{
+  font-size: 36px;
+  }
+  .far.fa-bookmark {
+    cursor: pointer;
+ }
+
+
+ 
+#ddd{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 0.5rem; /* 設定內邊距，使文字與邊框有一點距離 */
+}
+
+#kkk {
+  border: 0px;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 15px rgba(81, 81, 81, 0.2);
+  padding: 0.5rem; /* 設定內邊距，使文字與邊框有一點距離 */
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+img {         
+  border-radius: 10px;
+}
+
+
+#iii {
+  border: 0px;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 15px rgba(81, 81, 81, 0.2);
+  padding: 0.5rem; /* 設定內邊距，使文字與邊框有一點距離 */
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+  #parentElement {         
+    border: 0px;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 15px rgba(81, 81, 81, 0.2);
+    padding: 0.5rem; /* 設定內邊距，使文字與邊框有一點距離 */
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  /*SLIDER 相關*/
+.carousel-indicators {
+  margin: auto;
+  width: 80px;
+  height: 60px;
+  border-radius: 100%;
+  padding-bottom: 60px;
+}
+.carousel-indicators button {
+  margin: auto;
+  width: 20px;
+  height: 70px;
+  border-radius: 100%;
+}
+.carousel-inner img{      
+  width: 1200px;
+  height:350px;
+  padding-bottom: 30px;  
+  padding-top: 30px;     
+  }
+
+.carousel-control-prev-icon
+ {
+  background-color: rgb(234, 108, 18);
+}
+.carousel-control-next-icon
+{
+  background-color: rgb(234, 108, 18);
+}
+/*下拉選單相關*/
+.dropdown-menu {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  width: 200px;
+}
+.dropdown button{
+  color: #000;
+  background-color: white;
+  border-radius: 20px; 
+  width: 140px;
+}
+.dropdown-menu a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+  transition: all 0.2s ease-in-out;
+}
+.btn.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem #FFDEB9;
+  }
+.dropdown-menu a:hover {
+  background-color: #f2f2f2;
+}
+.dropdown-menu .divider {
+  height: 1px;
+  margin: 8px 0;
+  overflow: hidden;
+  background-color: #ccc;
+}
+
+/*餐卷格式*/
+.btn:focus {
+  box-shadow: 0 0 0 0.2rem #FFDEB9;
+  }
+
+

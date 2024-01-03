@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <title>CHOOEAT！</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="./images/header/logo2.png" />
+    <!-- 引入bootstrap -->
+    <link rel="stylesheet" href="./styles/bootstrap/bootstrap.min.css" />
+    <!-- 以下引入我們自己寫的css -->
+    <link rel="stylesheet" href="./styles/activity/activity.css" />
+    <link rel="stylesheet" href="./styles/activity/loading.css" />
+    <link rel="stylesheet" href="../prod/chooeat/styles/header/footer.css" />
+    <link rel="stylesheet" href="../prod/chooeat/styles/header/header.css" />
+    <!-- <link rel="stylesheet" href="./styles/all/all.css" /> -->
+
+    <!-- 引入Font awesome -->
+    <script
+      src="https://kit.fontawesome.com/956a3e277d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header class=".headerpage"></header>
+    <!-- 以下為內容區域，主要對這裡做修改 -->
+    <div class="main_content">
+      <div class="activity_main">
+        <div class="container">
+          <!-- 麵包屑與搜尋框 -->
+          <div class="row bread_and_search">
+            <!-- 麵包屑 -->
+            <nav
+              class="col"
+              style="--bs-breadcrumb-divider: '>'"
+              aria-label="breadcrumb"
+            >
+              <ol class="breadcrumb pt-3 ps-3">
+                <li class="breadcrumb-item">
+                  <a href="#" class="normal_a">首頁</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">揪團</li>
+              </ol>
+            </nav>
+
+            <!-- 搜尋框 -->
+            <form class="col search" name="search_value">
+              <input
+                type="text"
+                class="search_value rounded-3"
+                name="search_value"
+                placeholder="搜尋..."
+              />
+              <!-- <input type="hidden" class="search_value" /> -->
+              <button type="submit" class="submit">
+                <img src="./images/search_icon.png" alt="search_icon" />
+              </button>
+            </form>
+          </div>
+
+          <!--活動列表-->
+          <div class="row justify-content-center activity_list">
+            <!-- 這裡放入後端帶回的前3筆資料 -->
+            <div class="row card_list_3">
+              <!-- loading圈圈 -->
+              <div id="loadingContainer" class="loading text-center">
+                <div class="loading-container">
+                  <div class="spinner"></div>
+                  <h2>Loading...</h2>
+                </div>
+              </div>
+            </div>
+
+            <!--摺疊，這裡放入後端帶回的剩下資料-->
+            <div
+              class="row card_list_collapse collapse"
+              id="card_list_collapse"
+            ></div>
+            <a
+              href="#card_list_collapse"
+              class="normal_a viewmore mt-5 text-end"
+              data-bs-toggle="collapse"
+              aria-expanded="false"
+              aria-controls="card_list_collapse"
+              >查看更多⌄</a
+            >
+          </div>
+
+          <!-- 推薦活動區塊 -->
+          <div class="row justify-content-center">
+            <div class="body col-8 activity_recommend">
+              <h2>推薦揪團</h2>
+              <!-- 輪播圖 -->
+              <div
+                id="carouselExampleIndicators"
+                class="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-indicators">
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                  ></button>
+                </div>
+                <div class="carousel-inner rounded-3">
+                  <div class="carousel-item active">
+                    <img
+                      src="./images/reservation_image/res_exp.png"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./images/reservation_image/res_exp.png"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./images/reservation_image/res_exp.png"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 分隔線的div -->
+          <div class="seperate_line"></div>
+
+          <!-- 建立活動區塊，放置於bootstrap階層之外 -->
+          <div class="activity_establish_container row flex-row">
+            <h3 class="col-4">找不到想要的活動嗎？</h3>
+            <div class="activity_establish col">
+              <!-- <div class="greybg rounded-1"></div> -->
+              <img
+                src="./images/pexels-alexy-almond-3758133.jpg"
+                class="img-fluid h-100 opacity-75 rounded-3"
+              />
+              <a
+                class="btn btn-warning w-10 establish"
+                href="./activity_establish.html"
+                >開始揪團</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--footer-->
+    <div class="container-fluid footer_container"></div>
+
+    <!-- 引入 Bootstrap JS -->
+    <script src="./js/bootstrap/bootstrap.min.js"></script>
+    <!-- 引入 JQ -->
+    <script src="./js/vendors/jquery/jquery-3.4.1.min.js"></script>
+    <!-- 引入 自訂 JS -->
+    <script src="./js/activity/header.js"></script>
+    <script src="./js/activity/footer.js"></script>
+    <script src="./js/activity/activity.js"></script>
+    <script src="./js/activity/activity_login.js"></script>
+  </body>
+</html>

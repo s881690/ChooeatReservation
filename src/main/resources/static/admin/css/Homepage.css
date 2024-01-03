@@ -1,0 +1,124 @@
+/*搜尋餐廳頁面*/
+div.main_content{
+    width: 1200px;
+    margin: auto;
+   }
+
+.list-group button {
+  margin-bottom: 30px;
+}
+
+/*版面配置*/
+div>a {
+  color: #060606; 
+    display: inline-block;
+  }  
+  .col-sm-3 a {
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+  .col-sm-3{    
+   text-align: center;
+}
+  .col-sm-12 h1 {
+    margin-left: 150px
+  }
+  #res_serch_kind img{      
+    width: 150px;
+    height: 150px;
+  }
+
+  h1{
+  font-size: 36px;
+  }
+  /*SLIDER 相關*/
+.carousel-indicators {
+  margin: auto;
+  width: 80px;
+  height: 60px;
+  border-radius: 100%;
+  padding-bottom: 60px;
+}
+.carousel-indicators button {
+  margin: auto;
+  width: 20px;
+  height: 70px;
+  border-radius: 100%;
+}
+.carousel-inner img{      
+  width: 800PX;
+  height: 300px;  
+  padding-bottom: 30px;  
+  padding-top: 30px;     
+  }
+.d-inline-block {
+  transform: translateX(20%);
+}
+
+/*搜尋標籤相關*/
+input {
+  border-radius: 20px;
+  width: 400px;
+  text-align: center;
+  }
+ .search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  } 
+#search-input {
+  padding-right: 25px; 
+  border-radius: 50px;
+  width: 400px;;   
+  }
+#search_icon{
+  margin-left: -30px;
+  cursor: pointer; 
+}
+.carousel-control-prev-icon
+ {
+  background-color: rgb(234, 108, 18);
+}
+.carousel-control-next-icon
+{
+  background-color: rgb(234, 108, 18);
+}
+
+/*下拉選單相關*/
+.dropdown-menu {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  width: 200px;
+}
+.dropdown button{
+  color: #000;
+  background-color: white;
+  border-radius: 20px; 
+  width: 140px;
+}
+.dropdown-menu a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+  transition: all 0.2s ease-in-out;
+}
+.btn.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem #FFDEB9;
+  }
+.dropdown-menu a:hover {
+  background-color: #f2f2f2;
+}
+.dropdown-menu .divider {
+  height: 1px;
+  margin: 8px 0;
+  overflow: hidden;
+  background-color: #ccc;
+}
+

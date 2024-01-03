@@ -1,0 +1,16 @@
+div.main_content{
+    margin-top: 70px;
+    margin-bottom: 60px;
+}
+div.plate{
+    background-color: white;
+    padding: 10px 10px 30px 10px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    margin: 0 100px 0 100px;
+}
+#goBack{
+    margin: 12px 0 0 40px;
+    font-size: 30px;
+}

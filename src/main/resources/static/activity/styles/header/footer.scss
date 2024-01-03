@@ -1,0 +1,26 @@
+div.footer_container {
+  background-color: blanchedalmond;
+  footer {
+    ul {
+      li.nav-item {
+        a {
+          color: black !important;
+        }
+        a:hover {
+          font-weight: bolder;
+          color: orange !important;
+        }
+      }
+    }
+    p {
+      color: black !important;
+    }
+    p:hover {
+      font-weight: bolder;
+    }
+  }
+}
+
+// div.main_content {
+//   height: 3000px;
+// }

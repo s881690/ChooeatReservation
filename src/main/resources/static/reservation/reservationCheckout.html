@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <title>CHOOEAT！</title>
+    <meta charset="utf-8" />
+    <link href="./images/header/logo2.png" rel="shortcut icon" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- 引入bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+      integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+      integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/header_js/popper.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- 引入Font Awesome 套件 -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- 引入jquery相關套件 -->
+    <link
+      href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <!-- <script src="js/jquery.min.js"></script> -->
+
+    <!-- 以下引入我們自己寫的css和js -->
+    <link rel="stylesheet" href="./styles/header/footer.css" />
+    <link rel="stylesheet" href="./styles/header/header.css" />
+    <link rel="stylesheet" href="./styles/all/all.css" />
+    <link rel="stylesheet" href="./styles/main_content/mall_checkout.css" />
+    <script src="./js/reservation_js/getrestaurantName.js"></script>
+  </head>
+  <body>
+    <header>
+      <!-- 設定導覽列標籤在桌機以上size展開 -->
+      <nav class="navbar navbar-expand-lg" id="navbar">
+        <!-- div class="container-fluid"置中且滿版 -->
+        <div class="container">
+          <!-- .navbar-brand 標示為公司，產品或專案名稱。
+              這裡放的是chooeat文字logo
+                      這裡的連結之後要改，跳轉到首頁
+                  內包超連結，超連結裡面包圖片，讓使用者點圖片跳轉 -->
+          <a class="navbar-brand" href="../restaurant/Homepage.html">
+            <img src="./images/header/logo2.png" class="logo2" />
+            <h4>C H O O E A T ！</h4>
+          </a>
+          <!-- order-lg-last在bootstrap框架中是設定在父元素的排列順序，last的意思是會在最後面
+                      function_icons只代表這個class的名稱 -->
+          <div class="function_icons order-lg-last">
+            <!-- "mb-0" 類用於指定此元素的外邊距（margin）為 0。 
+                      "d-flex" 類用於指定此元素為一個彈性盒子，即在此元素內部的所有子元素將以一個方向排列
+                      ，並且可以通過 justify-content 和 align-items 屬性來調整它們之間的間距和位置。 -->
+            <p class="mb-0 d-flex">
+              <!-- "d-flex" 類用於指定此元素為一個彈性盒子，它將允許 "align-items-center" 
+                              和 "justify-content-center" 屬性來垂直和水平居中其內部的子元素。 
+                              "align-items-center" 類用於垂直居中，"justify-content-center" 類
+                              用於水平居中。 -->
+              <!-- 以下3個a標籤，包的是聊天視窗、購物車、會員登入的小icon -->
+              <!-- 						<a href="#" -->
+              <!-- 							class="d-flex align-items-center justify-content-center mr-1 icon"> -->
+              <!-- 							<img src="./chooeat/images/header/chat_icon.png" /> -->
+              <!-- 						</a>  -->
+              <a
+                href="mall_shopping_cart.html"
+                class="d-flex align-items-center justify-content-center mr-1 icon"
+              >
+                <img
+                  style="width: 40px; height: 40px; margin-right: 5px"
+                  src="./images/header/carts.png"
+                />
+              </a>
+              <a
+                href="../account/login.html"
+                class="accountIcon"
+                class="d-flex align-items-center justify-content-center mr-1 icon"
+              >
+                <img
+                  style="width: 40px; height: 40px; margin-right: 5px"
+                  src="./images/header/profile.png"
+                />
+              </a>
+              <span
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  vertical-align: middle;
+                  margin-left: 10px;
+                "
+                id="sname"
+              ></span>
+            </p>
+          </div>
+          <!-- 這個button是漢堡選單的menu按鈕 -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#ftco-nav"
+            aria-controls="ftco-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="fa fa-bars"></span> Menu
+          </button>
+          <!-- 以下為header各分區的標題連結 -->
+          <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul
+              class="navbar-nav d-flex align-items-center justify-content-center"
+              style="gap: 1rem"
+            >
+              <li class="nav-item">
+                <a
+                  href="../restaurant/Homepage.html"
+                  class="nav-link"
+                  style="margin-left: 100px"
+                  >首頁</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="../restaurant/Homepage.html" class="nav-link"
+                  >找餐廳</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="../prod/mall.html" class="nav-link">找餐券</a>
+              </li>
+              <li class="nav-item">
+                <a href="../activity/activity.html" class="nav-link">揪團</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">關於我們</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="main_content">
+      <div class="container">
+        <div class="row">
+          <div class="restaurant">
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th>價格</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <h1 id="restaurantName">餐廳名稱</h1>
+                  </td>
+                  <td></td>
+                  <td id="ppl"></td>
+                  <td><span id="total">NT $1,000</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="pay_area">
+            <h4>付款方式</h4>
+            <div class="credit_area">
+              <input type="radio" /> <span style="font-size: 24px">信用卡</span>
+              <input
+                type="text"
+                class="credit_number"
+                placeholder="信用卡卡號"
+              />
+              <input
+                type="text"
+                class="credit_date"
+                placeholder="信用卡到期日"
+              />
+              <input type="text" class="credit_security" placeholder="安全碼" />
+            </div>
+            <div class="pay_check_area">
+              <span class="pay_check_text"
+                >點擊「確認付款方式」即表示確認訂單與右方總金額無誤，且同意平台服務條款、退改政策與信用卡/銀行轉帳服務條款</span
+              >
+              <button class="pay_check_btn">確認結帳</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3 py-2 my-2">
+        <li class="nav-item">
+          <a
+            href="#"
+            class="nav-link px-4 text-muted"
+            style="color: black !important; font-size: small"
+            >首頁</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="../restaurant/Homepage.html"
+            class="nav-link px-4 text-muted"
+            style="color: black !important; font-size: small"
+            >找餐廳</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="../prod/mall.html"
+            class="nav-link px-4 text-muted"
+            style="color: black !important; font-size: small"
+            >找餐券</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="../activity/activity.html"
+            class="nav-link px-4 text-muted"
+            style="color: black !important; font-size: small"
+            >揪團</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="#"
+            class="nav-link px-4 text-muted"
+            style="color: black !important; font-size: small"
+            >商家申請</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="#"
+            class="nav-link px-4 text-muted"
+            style="color: black !important; font-size: small"
+            >關於我們</a
+          >
+        </li>
+      </ul>
+      <p
+        class="text-center text-muted mb-0 py-2 my-3"
+        style="color: black !important; font-size: small"
+      >
+        CopyRight &copy; THA101 G4
+      </p>
+    </footer>
+    <script src="./js/reservation_js/reservedCheckoutButton.js"></script>
+  </body>
+</html>

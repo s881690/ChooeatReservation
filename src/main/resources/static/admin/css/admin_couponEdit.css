@@ -1,0 +1,52 @@
+/********** 表格 **********/
+.searchBtn{
+    background-color: white;
+}
+div.main_content{
+    margin-top: 70px;
+    margin-bottom: 100px;
+}
+.tableName{
+    /* border: 1px solid red; */
+    padding: 20px 0 10px 0;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchBar{
+    /* border: 1px solid red; */
+    padding: 10px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input.searchResName{
+    width: 300px;
+    height: 24px;
+}
+select.searchType{
+    width: 200px;
+}
+select.resState{
+    width: 200px;
+}
+div.tableContent{
+    background-color: white;
+    padding: 10px;
+    /* border: 1px solid red; */
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+}
+th, tr, td{
+    text-align: center;
+    vertical-align: middle;
+}
+.pagination li{
+    margin: 0 5px;
+}
+.stateBtn, .adjustBtn{
+    background-color: white;
+}

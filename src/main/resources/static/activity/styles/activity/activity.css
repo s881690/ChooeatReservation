@@ -1,0 +1,297 @@
+body a.icon {
+  /* border: 1px solid purple; */
+  margin-right: 10px !important;
+}
+body a.normal_a {
+  text-decoration: none;
+  color: black;
+}
+body a.normal_a:hover {
+  text-decoration: none;
+  font-weight: bolder;
+  color: orange;
+}
+body li.active {
+  color: orange !important;
+  font-weight: bolder;
+}
+body div.main_content {
+  min-height: calc(100% - 25vh);
+}
+body div.main_content div.bread_and_search li {
+  font-size: 20px;
+}
+body div.main_content div.bread_and_search li a {
+  font-size: 20px;
+}
+body div.main_content div.bread_and_search form.search {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+body div.main_content div.bread_and_search form.search button.submit {
+  margin-left: 10px;
+  width: 50px;
+  height: auto;
+  border: none;
+  background-color: white;
+}
+body div.main_content div.bread_and_search form.search button.submit img {
+  width: 100%;
+  height: 100%;
+}
+body div.main_content div.activity_main {
+  /* height: 80vh; */
+  /* border: 1px solid red; */
+  margin-bottom: 1rem !important;
+}
+body div.main_content div.activity_main div.container div.activity_list {
+  /* border: 1px solid blue; */
+  margin-top: 1rem;
+}
+body div.main_content div.activity_main div.container div.activity_list div.card-body p {
+  color: gray;
+  font-size: 12px;
+}
+body div.main_content div.activity_main div.container div.activity_list div.card-body p.restaurant-name {
+  color: black;
+  font-weight: bolder;
+}
+body div.main_content div.activity_main div.container div.activity_list div.card-body svg.like {
+  cursor: pointer;
+}
+body div.main_content div.activity_main div.container div.activity_list div.card-body svg.like path {
+  pointer-events: none;
+}
+body div.main_content div.activity_main div.container div.activity_list a.viewmore {
+  padding-left: 88%;
+  margin-right: 2%;
+}
+body div.main_content div.activity_main div.container div.seperate_line {
+  margin-top: 10vh;
+  border: 0.5px solid lightslategray;
+}
+body div.main_content div.activity_main div.container div.activity_recommend {
+  margin-top: 3rem;
+  /* border: 1px solid green; */
+}
+body div.main_content div.activity_main div.container div.activity_recommend h2:first-child {
+  text-align: center;
+}
+body div.main_content div.activity_main div.container div.activity_establish_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body div.main_content div.activity_main div.container div.activity_establish_container h3 {
+  margin-top: 10vh;
+  text-align: center;
+}
+body div.main_content div.activity_main div.container div.activity_establish_container div.activity_establish {
+  width: 60%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  background-color: #fff;
+}
+body div.main_content div.activity_main div.container div.activity_establish_container div.activity_establish div.greybg {
+  position: absolute;
+  background-color: rgb(205, 205, 205);
+  width: 100%;
+  height: 100%;
+  opacity: 60%;
+}
+body div.main_content div.activity_main div.container div.activity_establish_container div.activity_establish a.btn {
+  z-index: 6;
+  position: absolute;
+  top: 50%;
+  align-items: center;
+}
+body div.main_content div.activity_main_search {
+  /* height: 80vh; */
+  /* border: 1px solid red; */
+  margin-bottom: 1rem !important;
+}
+body div.main_content div.activity_main_search div.container div.activity_list {
+  /* border: 1px solid blue; */
+  margin-top: 1rem;
+}
+body div.main_content div.activity_main_search div.container div.activity_list div.card-body p {
+  color: gray;
+  font-size: 12px;
+}
+body div.main_content div.activity_main_search div.container div.activity_list div.card-body p.restaurant-name {
+  color: black;
+  font-weight: bolder;
+}
+body div.main_content div.activity_main_search div.container div.activity_list div.card-body svg.like {
+  cursor: pointer;
+}
+body div.main_content div.activity_main_search div.container div.activity_list div.card-body svg.like path {
+  pointer-events: none;
+}
+body div.main_content div.activity_main_search div.container div.seperate_line {
+  margin-top: 10vh;
+  border: 0.5px solid lightslategray;
+}
+body div.main_content div.activity_main_search div.container div.pages-bar {
+  margin-top: 20px;
+  justify-content: center;
+}
+body div.main_content div.activity_main_search div.container div.pages-bar div {
+  border: 1px solid red;
+  text-align: center;
+}
+body div.main_content div.activity_establish_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body div.main_content div.activity_establish_container div.activity_establish {
+  margin: 10vh 0 !important;
+  width: 60%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lemonchiffon;
+  border-radius: 10px;
+}
+body div.main_content div.activity_establish_container div.activity_establish h3 {
+  margin: 10vh 0 20vh 0;
+  text-align: center;
+}
+body div.main_content div.activity_establish_container div.activity_establish button {
+  padding: 15px 20px 15px 20px;
+  border-radius: 15px;
+}
+body div.main_content div.activity_establish_main div.container div.activity_title {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+body div.main_content div.activity_establish_main div.container div.activity_title h3 {
+  text-align: center;
+  font-weight: bolder;
+}
+body div.main_content div.activity_establish_main div.container form.activity_establish_form {
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 10px;
+  margin-left: 3vh;
+  margin-right: 3vh;
+}
+body div.main_content div.activity_establish_main div.container form.activity_establish_form span.error_span {
+  display: none;
+  color: red;
+}
+body div.main_content div.activity_establish_main div.container form.activity_establish_form section.activity_establish_form_left div {
+  margin-bottom: 20px;
+}
+body div.main_content div.activity_establish_main div.container form.activity_establish_form section.activity_establish_form_right div.show_photo {
+  text-align: center;
+  width: 100%;
+  height: 70%;
+  border-radius: 10px;
+}
+body div.main_content div.activity_establish_main div.container form.activity_establish_form section.activity_establish_form_right div.show_photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+body div.main_content div.activity_establish_main div.container form.activity_establish_form section.btns {
+  margin-top: 30px;
+  align-items: center;
+}
+body div.main_content div.activity_establish_main div.container form.activity_establish_form section.btns div {
+  display: flex;
+  justify-content: center;
+}
+body div.main_content div.activity_main_detail {
+  margin-bottom: 1rem !important;
+}
+body div.main_content div.activity_main_detail div.container div.activity_img {
+  display: flex;
+  justify-content: center;
+}
+body div.main_content div.activity_main_detail div.container div.activity_img img {
+  border-radius: 10px;
+}
+body div.main_content div.activity_main_detail div.container h1.activity_title {
+  text-align: center;
+}
+body div.main_content div.activity_main_detail div.container div.activity_detail {
+  border-radius: 10px;
+}
+body div.main_content div.activity_main_detail div.container div.activity_detail div.activity_info div.activity_introtext {
+  margin: 20px 0 20px 0;
+  width: 80%;
+}
+body div.main_content div.activity_main_detail div.container div.activity_detail div.activity_info div.activity_host {
+  width: 80%;
+}
+body div.main_content div.activity_main_detail div.container div.activity_detail aside div.btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body div.main_content div.activity_main_detail div.container div.activity_detail aside div.btns div.signup {
+  width: 100%;
+}
+body div.main_content div.activity_main_detail div.container div.activity_detail aside div.btns div.signup div {
+  width: 100%;
+}
+body div.main_content div.activity_main_detail div.container div.activity_detail aside div.btns div.other_btns {
+  width: 100%;
+}
+body div.main_content div.activity_main_detail div.container div.activity_detail aside div.btns div.other_btns div {
+  width: 32.5%;
+}
+body div.main_content div.activity_main_detail div.container div.activity_detail aside div.map {
+  height: 40vh;
+  margin: 20px 0 20px 0;
+}
+body div.main_content div.activity_main_detail div.container div.activity_detail aside div.invite_friends div.list-group-item {
+  display: flex;
+  align-items: center;
+}
+body div.main_content div.activity_main_detail div.container div.activity_detail aside div.invite_friends div.list-group-item p {
+  text-align: center;
+  margin-bottom: 0;
+}
+body div.main_content div.activity_main_organizer div.container form.participant_search {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+body div.main_content div.activity_main_organizer div.container form.participant_search button.submit {
+  margin-left: 10px;
+  width: 50px;
+  height: auto;
+  border: none;
+  background-color: white;
+}
+body div.main_content div.activity_main_organizer div.container form.participant_search button.submit img {
+  width: 100%;
+  height: 100%;
+}
+body div.main_content div.activity_main_organizer div.container form.participant_search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body div.main_content div.activity_main_organizer div.container form.participant_search button {
+  margin-left: 10px;
+  width: 50px;
+  height: auto;
+  border: none;
+  background-color: white;
+}
+body div.main_content div.activity_main_organizer div.container form.participant_search button img {
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=activity.css.map */

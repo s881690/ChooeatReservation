@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <title>CHOOEAT！</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- 引入moment.js -->
+    <script src="./vendors/moment.js"></script>
+    <!-- 引入bootstrap5 ,以及漢堡下拉式選單-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- 引入Font Awesome 套件 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- 引入bootstrap5頁籤-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+    />
+    <script src="https://unpkg.com/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+
+    <!-- 引入datatable頁籤-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+    <!-- 引入 Flatpickr 的 CSS 檔案 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <!-- 這裡需要修改 -->
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/all.css" />
+    <link rel="stylesheet" href="./css/Restaurantcenter.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- 設定導覽列標籤在桌機以上size展開 -->
+      <nav class="navbar navbar-expand-lg" id="navbar">
+        <!-- div class="container-fluid"置中且滿版 -->
+        <div class="container">
+          <!-- .navbar-brand 標示為公司，產品或專案名稱。
+              這裡放的是chooeat文字logo
+                      這裡的連結之後要改，跳轉到首頁
+                  內包超連結，超連結裡面包圖片，讓使用者點圖片跳轉 -->
+          <a class="navbar-brand" href="#">
+            <img src="./images/logo2.png" class="logo2" />
+            <h4>C H O O E A T ！</h4>
+          </a>
+          <!-- order-lg-last在bootstrap框架中是設定在父元素的排列順序，last的意思是會在最後面
+                      function_icons只代表這個class的名稱 -->
+          <div class="function_icons order-lg-last">
+            <!-- "mb-0" 類用於指定此元素的外邊距（margin）為 0。 
+                      "d-flex" 類用於指定此元素為一個彈性盒子，即在此元素內部的所有子元素將以一個方向排列
+                      ，並且可以通過 justify-content 和 align-items 屬性來調整它們之間的間距和位置。 -->
+            <p class="mb-0 d-flex">
+              <!-- "d-flex" 類用於指定此元素為一個彈性盒子，它將允許 "align-items-center" 
+                              和 "justify-content-center" 屬性來垂直和水平居中其內部的子元素。 
+                              "align-items-center" 類用於垂直居中，"justify-content-center" 類
+                              用於水平居中。 -->
+              <!-- 以下3個a標籤，包的是聊天視窗、購物車、會員登入的小icon -->
+              <!-- 						<a href="#" -->
+              <!-- 							class="d-flex align-items-center justify-content-center mr-1 icon"> -->
+              <!-- 							<img src="./chooeat/images/header/chat_icon.png" /> -->
+              <!-- 						</a>  -->
+              <a
+                href="../prod/mall_shopping_cart.html"
+                class="d-flex align-items-center justify-content-center mr-1 icon"
+              >
+                <img
+                  style="width: 40px; height: 40px; margin-right: 5px"
+                  src="./images/carts.png"
+                />
+              </a>
+              <a
+                href="../account/login.html"
+                class="accountIcon"
+                class="d-flex align-items-center justify-content-center mr-1 icon"
+              >
+                <img
+                  style="width: 40px; height: 40px; margin-right: 5px"
+                  src="./images/profile.png"
+                />
+              </a>
+              <span
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  vertical-align: middle;
+                  margin-left: 10px;
+                "
+                id="sname"
+              ></span>
+            </p>
+          </div>
+          <!-- 這個button是漢堡選單的menu按鈕 -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#ftco-nav"
+            aria-controls="ftco-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="fa fa-bars"></span> Menu
+          </button>
+          <!-- 以下為header各分區的標題連結 -->
+          <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul
+              class="navbar-nav d-flex align-items-center justify-content-center"
+              style="gap: 1rem"
+            >
+              <li class="nav-item">
+                <a
+                  href="../restaurant/Homepage.html"
+                  class="nav-link"
+                  style="margin-left: 100px"
+                  >首頁</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="../restaurant/Homepage.html" class="nav-link"
+                  >找餐廳</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="../prod/mall.html" class="nav-link">找餐券</a>
+              </li>
+              <li class="nav-item">
+                <a href="../activity/activity.html" class="nav-link">揪團</a>
+              </li>
+              <li class="nav-item">
+                <a href="../prod/aboutUs.html" class="nav-link">關於我們</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- 以下為內容區域，主要對這裡做修改 -->
+    <div class="main_content">
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <div
+              class="nav flex-column nav-pills"
+              id="v-pills-tab"
+              role="tablist"
+              aria-orientation="vertical"
+            >
+              <!--nav/導覽 flex-column/垂直排列 nav-pills/藥丸型 tablist/標籤列表 aria-orientation/垂直排列-->
+              <button
+                class="nav-link active"
+                id="v-pills-font-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#v-pills-font"
+                type="button"
+                role="tab"
+                aria-controls="v-pills-font"
+                aria-selected="true"
+              >
+                餐廳會員首頁
+              </button>
+              <button
+                class="nav-link"
+                id="v-pills-admis-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#v-pills-admis"
+                type="button"
+                role="tab"
+                aria-controls="v-pills-admis"
+                aria-selected="true"
+              >
+                管理追蹤者
+              </button>
+              <!--data-bs-toggle=pill/點擊時會切換到目標區域 data-bs-target="#v-pills-home"/目標的區塊 
+                role="tab"/選項卡 aria-controls="v-pills-home"/控制選項卡 aria-selected="true"/已選取-->
+              <button
+                class="nav-link"
+                id="v-pills-prod-upload-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#v-pills-prod-upload"
+                type="button"
+                role="tab"
+                aria-controls="v-pills-prod-upload"
+                aria-selected="false"
+              >
+                上傳餐券
+              </button>
+              <button
+                class="nav-link"
+                id="v-pills-prod-find-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#v-pills-prod-find"
+                type="button"
+                role="tab"
+                aria-controls="v-pills-prod-find"
+                aria-selected="false"
+              >
+                查看餐券
+              </button>
+
+              <button
+                class="nav-link"
+                id="v-pills-yoyaku-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#v-pills-yoyaku"
+                type="button"
+                role="tab"
+                aria-controls="v-pills-yoyaku"
+                aria-selected="false"
+              >
+                查看預約紀錄
+              </button>
+              <button
+                class="nav-link"
+                id="v-pills-hyoga-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#v-pills-hyoga"
+                type="button"
+                role="tab"
+                aria-controls="v-pills-hyoga"
+                aria-selected="false"
+              >
+                查看/回覆餐廳評論
+              </button>
+              <button
+                class="nav-link"
+                id="v-pills-osusume-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#v-pills-osusume"
+                type="button"
+                role="tab"
+                aria-controls="v-pills-osusume"
+                aria-selected="false"
+              >
+                上傳廣告推銷
+              </button>
+              <button
+                class="nav-link"
+                id="v-pills-find-osusume-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#v-pills-findosusume"
+                type="button"
+                role="tab"
+                aria-controls="v-pills-findosusume"
+                aria-selected="false"
+              >
+                查看廣告推銷
+              </button>
+            </div>
+          </div>
+          <div class="col-9" id="comment">
+            <div class="tab-content" id="v-pills-tabContent">
+              <!--role="tabpanel"/選項卡的頁籤 aria-labelledby="v-pills-home-tab"/指定哪個點擊哪個頁籤-->
+              <div
+                class="tab-pane fade show active"
+                id="v-pills-font"
+                role="tabpanel"
+                aria-labelledby="v-pills-font-tab"
+              >
+                <div class="row">
+                  <div id="vvv"></div>
+                  <div class="col-4">
+                    <div class="panel-group" id="accordion">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                            <a
+                              data-toggle="collapse"
+                              style="text-decoration: none; color: black"
+                              data-parent="#accordion"
+                              href="#collapseOne"
+                            >
+                              餐廳基本資料
+                            </a>
+                          </h4>
+                        </div>
+                        <div
+                          id="collapseOne"
+                          class="panel-collapse collapse in"
+                        >
+                          <div class="panel-body" id="ggg"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <div class="panel-group" id="accordion">
+                      <div class="panel panel-success">
+                        <div class="panel-heading" style="text-align: center">
+                          <h4 class="panel-title">
+                            <a
+                              data-toggle="collapse"
+                              data-parent="#accordion"
+                              href="#collapseTwo"
+                              style="text-decoration: none; color: black"
+                            >
+                              功能
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                          <div class="row panel-body">
+                            <button class="btn" id="g1">點擊修改</button>
+                            <button class="btn" id="g2">點擊送出</button>
+                            <button class="btn" id="g3">編輯公休日</button>
+                            <button class="btn" id="g4">編輯餐廳類別</button>
+                            <button class="btn" id="g5">編輯餐廳簡介</button>
+                            <button class="btn" id="g6">上傳圖片</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <div class="panel-group" id="accordion">
+                      <div class="panel panel-info">
+                        <div class="panel-heading" style="text-align: center">
+                          <h4 class="panel-title">
+                            <a
+                              data-toggle="collapse"
+                              data-parent="#accordion"
+                              href="#collapseThree"
+                              style="text-decoration: none; color: black"
+                            >
+                              顯示編輯結果
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <input
+                              type="text"
+                              id="datepicker"
+                              class="www"
+                              placeholder="選擇日期"
+                              hidden
+                            />
+                            <button id="sendButton" class="www btn" hidden>
+                              送出
+                            </button>
+                            <hr class="www" hidden />
+                            <div id="zzz" class="iii" hidden>
+                              <label>餐廳類別：</label>
+                              <div
+                                id="restaurantCategories"
+                                style="
+                                  border: 1px solid #ccc;
+                                  padding: 10px;
+                                  height: 30 0px;
+                                  overflow-y: scroll;
+                                  overflow-x: scroll;
+                                "
+                              >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="1"
+                                  />
+                                  火鍋</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="2"
+                                  />
+                                  燒烤</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="3"
+                                  />
+                                  速食</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="4"
+                                  />
+                                  漢堡</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="5"
+                                  />
+                                  義大利麵</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="6"
+                                  />
+                                  韓式炸雞</label
+                                ><br />
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="7"
+                                  />
+                                  拉麵</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="8"
+                                  />
+                                  壽司</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="9"
+                                  />
+                                  鐵板燒</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="10"
+                                  />
+                                  便當</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="11"
+                                  />
+                                  炸物</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="12"
+                                  />
+                                  韓式</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="13"
+                                  />
+                                  越南料理</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="14"
+                                  />
+                                  壽喜燒</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="11"
+                                  />
+                                  炸物</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="15"
+                                  />
+                                  披薩</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="16"
+                                  />
+                                  吃到飽</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="17"
+                                  />
+                                  健康餐</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="18"
+                                  />
+                                  自助餐</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="19"
+                                  />
+                                  牛排</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="20"
+                                  />
+                                  西式</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="21"
+                                  />
+                                  素食</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="21"
+                                  />
+                                  素食</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="22"
+                                  />
+                                  飲料</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="23"
+                                  />
+                                  合菜</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="24"
+                                  />
+                                  港式</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="25"
+                                  />
+                                  咖哩</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="26"
+                                  />
+                                  麵食</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="27"
+                                  />
+                                  海鮮</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="28"
+                                  />
+                                  小吃</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="29"
+                                  />
+                                  滷味</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="30"
+                                  />
+                                  牛肉麵</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="31"
+                                  />
+                                  中式</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="32"
+                                  />
+                                  粥</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="33"
+                                  />
+                                  沙拉</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="34"
+                                  />
+                                  印度料理</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="35"
+                                  />
+                                  甜點</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="36"
+                                  />
+                                  冰品</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="37"
+                                  />
+                                  東南亞</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="38"
+                                  />
+                                  其他</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="39"
+                                  />
+                                  早餐</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="40"
+                                  />
+                                  早午餐</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="41"
+                                  />
+                                  午餐</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="42"
+                                  />
+                                  晚餐</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="43"
+                                  />
+                                  宵夜</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="44"
+                                  />
+                                  約會餐廳</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="45"
+                                  />
+                                  親子餐廳</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="46"
+                                  />
+                                  家庭餐廳</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="47"
+                                  />
+                                  景觀餐廳</label
+                                >
+                                <label
+                                  ><input
+                                    type="checkbox"
+                                    name="category"
+                                    value="48"
+                                  />
+                                  高級餐廳</label
+                                >
+                              </div>
+                            </div>
+                            <button id="sendtypeButton" class="iii btn" hidden>
+                              送出
+                            </button>
+                            <hr class="iii" hidden />
+                            <textarea
+                              hidden
+                              placeholder="請輸入餐廳自我介紹"
+                              name="intro"
+                              id="intro"
+                              class="ppp"
+                              cols="30"
+                              rows="10"
+                              style="width: 100%"
+                            ></textarea>
+                            <button id="sendintroButton" class="ppp btn" hidden>
+                              送出
+                            </button>
+                            <hr class="ppp" hidden />
+                            <div>
+                              <input
+                                id="restaurantuploadimage"
+                                name="resimage"
+                                class="form-control uuu"
+                                type="file"
+                                accept="image/*"
+                                onchange="previewImagemyself(event)"
+                                hidden
+                              />
+                            </div>
+                            <div>
+                              <img
+                                id="image-preview"
+                                src="#"
+                                class="uuu"
+                                alt="預覽圖片"
+                                style="width: 100%; height: 100%; display: none"
+                                hidden
+                              />
+                            </div>
+                            <div>
+                              <button
+                                id="restaurantuploadimagebutton"
+                                type="button"
+                                class="btn uuu"
+                                style="width: 100%"
+                                hidden
+                              >
+                                送出
+                              </button>
+                              <hr class="uuu" hidden />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="v-pills-admis"
+                role="tabpanel"
+                aria-labelledby="v-pills-admis-tab"
+              >
+                <table id="myTable" class="display" style="width: 100%">
+                  <thead>
+                    <tr>
+                      <th>追蹤者ID</th>
+                      <th>姓名</th>
+                      <th>操作功能</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="v-pills-prod-upload"
+                role="tabpanel"
+                aria-labelledby="v-pills-prod-upload-tab"
+              >
+                <div class="row">
+                  <div class="col-2"></div>
+                  <div class="col-8">
+                    <h1><i class="fas fa-upload"></i>上傳餐券</h1>
+
+                    <div>
+                      <div>
+                        <i class="fa fa-ticket fa-sm"></i>
+                      </div>
+                      <input
+                        name="prodname"
+                        class="form-control"
+                        placeholder="請輸入餐券名稱"
+                        type="text"
+                      />
+                    </div>
+
+                    <div>
+                      <div>
+                        <i class="fas fa-yen-sign"></i>
+                      </div>
+                      <input
+                        name="prodprice"
+                        class="form-control"
+                        placeholder="請輸入餐券金額"
+                        type="number"
+                      />
+                    </div>
+
+                    <div>
+                      <div>
+                        <i class="fas fa-ticket-alt"></i>
+                      </div>
+                      <input
+                        name="prodnumber"
+                        class="form-control"
+                        placeholder="請輸入餐券數量"
+                        type="number"
+                      />
+                    </div>
+
+                    <div>
+                      <div>
+                        <i class="fas fa-pencil-ruler"></i>
+                      </div>
+                      <textarea
+                        name="prodruler"
+                        class="form-control"
+                        placeholder="請輸入餐券使用規則"
+                        type="text"
+                      ></textarea>
+                    </div>
+
+                    <div>
+                      <div>
+                        <i class="fa fa-user"></i>
+                      </div>
+                      <textarea
+                        name="proddiscribe"
+                        class="form-control"
+                        placeholder="請輸入餐券描述"
+                        type="text"
+                      ></textarea>
+                    </div>
+                    <div hidden>
+                      <div>
+                        <i class="fa fa-table"></i>
+                      </div>
+                      <select name="prodstatus" class="form-control">
+                        <option value="1">申請中</option>
+                      </select>
+                    </div>
+                    <div>
+                      <div>
+                        <i class="fas fa-image"></i>
+                      </div>
+                      <input
+                        id="image-upload"
+                        name="prodimage"
+                        class="form-control"
+                        type="file"
+                        accept="image/*"
+                        onchange="previewImage(event)"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        id="image-previewprod"
+                        src="#"
+                        alt="預覽圖片"
+                        style="max-width: auto; max-height: auto; display: none"
+                      />
+                    </div>
+                    <div>
+                      <button
+                        id="restaurantuploadprod"
+                        type="button"
+                        class="btn"
+                        style="width: 100%"
+                      >
+                        送出
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="col-2"></div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="v-pills-prod-find"
+                role="tabpanel"
+                aria-labelledby="v-pills-prod-find-tab"
+              >
+                <table id="myTable3" class="display" style="width: 100%">
+                  <thead>
+                    <tr>
+                      <th>餐券ID</th>
+                      <th>餐券名稱</th>
+                      <th>餐券描述</th>
+                      <th>餐券使用規則</th>
+                      <th>餐券價錢</th>
+                      <th>餐券數量</th>
+                      <th>餐券狀態</th>
+                      <th>操作功能</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+                <div id="update" class="container" hidden>
+                  <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8">
+                      <h1 style="text-align: center">
+                        <i class="fas fa-upload"></i>編輯餐券
+                      </h1>
+                      <div style="margin-bottom: 5px" hidden>
+                        <div h>餐券ID</div>
+                        <input
+                          name="updateprodid"
+                          class="form-control"
+                          type="text"
+                        />
+                      </div>
+
+                      <div style="margin-bottom: 5px">
+                        <div>餐券名稱</div>
+                        <input
+                          name="updateprodname"
+                          class="form-control"
+                          type="text"
+                        />
+                      </div>
+
+                      <div style="margin-bottom: 5px">
+                        <div>餐券價錢</div>
+                        <input
+                          name="updateprodprice"
+                          class="form-control"
+                          type="number"
+                        />
+                      </div>
+
+                      <div style="margin-bottom: 5px">
+                        <div>餐券數量</div>
+                        <input
+                          name="updateprodnumber"
+                          class="form-control"
+                          type="number"
+                        />
+                      </div>
+
+                      <div style="margin-bottom: 5px">
+                        <div>餐券使用規則</div>
+                        <textarea
+                          name="updateprodruler"
+                          class="form-control"
+                          type="text"
+                        ></textarea>
+                      </div>
+
+                      <div style="margin-bottom: 5px">
+                        <div>餐券描述</div>
+                        <textarea
+                          name="updateproddiscribe"
+                          class="form-control"
+                          type="text"
+                        ></textarea>
+                      </div>
+                      <div hidden>
+                        <div>
+                          <i class="fa fa-table"></i>
+                        </div>
+                        <select name="updateprodstatus" class="form-control">
+                          <option value="1">申請中</option>
+                        </select>
+                      </div>
+                      <div style="margin-bottom: 5px">
+                        <button
+                          id="restaurantupdateprod"
+                          class="btn"
+                          style="width: 100%"
+                        >
+                          送出
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-2"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tab-pane fade"
+                id="v-pills-yoyaku"
+                role="tabpanel"
+                aria-labelledby="v-pills-yoyaku-tab"
+              >
+                <table id="myTable2" class="display" style="width: 100%">
+                  <thead>
+                    <tr>
+                      <th>預約ID</th>
+                      <th>預約人數</th>
+                      <th>用餐開始時間</th>
+                      <th>用餐結束時間</th>
+                      <th>備註事項</th>
+                      <th>定位狀態</th>
+                      <th>操作功能</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="v-pills-hyoga"
+                role="tabpanel"
+                aria-labelledby="v-pills-hyoga-tab"
+              >
+                <table id="myTable4" class="display" style="width: 100%">
+                  <thead>
+                    <tr>
+                      <th>留言者</th>
+                      <th>留言日期</th>
+                      <th>留言評論</th>
+                      <th>星數評價</th>
+                      <th>餐廳回覆日期</th>
+                      <th>餐廳回覆評論</th>
+                      <th>操作功能</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="v-pills-osusume"
+                role="tabpanel"
+                aria-labelledby="v-pills-osusume-tab"
+              >
+                <div class="row">
+                  <div class="col-2"></div>
+                  <div class="col-8">
+                    <h1><i class="fas fa-upload"></i>上傳廣告推銷</h1>
+                    <div>
+                      <div>
+                        <i class="fa fa-ticket fa-sm"></i>
+                      </div>
+                      <select name="adplan" class="form-control">
+                        <option value="" disabled selected>請選擇方案</option>
+                        <option value="1">廣告餐廳</option>
+                        <option value="2">廣告餐券</option>
+                        <option value="3">廣告餐廳+餐券</option>
+                      </select>
+                    </div>
+                    <div>
+                      <div>
+                        <i class="fas fa-yen-sign"></i>
+                      </div>
+                      <input
+                        name="adprice"
+                        class="form-control"
+                        placeholder="金額計算結果"
+                        type="text"
+                        disabled
+                      />
+                    </div>
+                    <div>
+                      <br />
+                      <div>請輸入開始時間</div>
+                      <input
+                        type="date"
+                        name="adstarttime"
+                        class="form-control"
+                      />
+                    </div>
+                    <div>
+                      <br />
+                      <div>請輸入結束時間</div>
+                      <input
+                        type="date"
+                        name="adendtime"
+                        class="form-control"
+                      />
+                    </div>
+                    <div>
+                      <button
+                        id="restaurantuploadad"
+                        type="button"
+                        class="btn"
+                        style="width: 100%"
+                      >
+                        送出
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="col-2"></div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="v-pills-findosusume"
+                role="tabpanel"
+                aria-labelledby="v-pills-findosusume-tab"
+              >
+                <table id="myTable5" class="display" style="width: 100%">
+                  <thead>
+                    <tr>
+                      <th>廣告ID</th>
+                      <th>廣告方案</th>
+                      <th>廣告申請時間</th>
+                      <th>廣告開始時間</th>
+                      <th>廣告結束時間</th>
+                      <th>廣告費用</th>
+                      <th>審核狀態</th>
+                      <th>操作功能</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- class="navbar-fixed-bottom"讓footer置底 -->
+    <div class="container-fluid footer_container">
+      <footer>
+        <ul
+          class="nav justify-content-center border-bottom pb-3 mb-3 py-2 my-2"
+        >
+          <li class="nav-item">
+            <a
+              href="../restaurant/Homepage.html"
+              class="nav-link px-4 text-muted"
+              >首頁</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="../restaurant/Homepage.html"
+              class="nav-link px-4 text-muted"
+              >找餐廳</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="../prod/mall.html" class="nav-link px-4 text-muted"
+              >找餐券</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="../activity/activity.html" class="nav-link px-4 text-muted"
+              >揪團</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="../activity/activity.html" class="nav-link px-4 text-muted"
+              >商家申請</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="../prod/aboutUs.html" class="nav-link px-4 text-muted"
+              >關於我們</a
+            >
+          </li>
+        </ul>
+        <p class="text-center text-muted mb-0 py-2 my-3">
+          CopyRight &copy; THA101 G4
+        </p>
+      </footer>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="./js/Restaurantcenter.js"></script>
+</html>

@@ -1,0 +1,199 @@
+/* 全畫面的調整 */
+
+
+/* 標題，其實只有餐廳名稱 */
+h1{
+    font-size: 36px;
+    font-weight:900;
+  
+}
+
+img{
+    max-width: 1100px;
+    max-height: 400px;
+}
+
+/* 這裡只有餐廳那個地方的div */
+div.title{
+    border-bottom: 1px solid #a9a9a9;
+}
+
+/* 每一個大橫排 */
+div.col-12{
+    /* border: 1px solid green;  */
+    padding: 10px;
+    padding-left: 50px;
+}
+/* 2欄式的部分，這裡只有選人數和日期 */
+div.col-6{
+    /* border: 1px solid purple; */
+    margin-top: 20px;
+}
+
+
+
+div.second{
+    padding-left: 50px;
+}
+
+div.remind{
+    padding-left: 250px;
+}
+
+div.choose_time{
+ padding-left: 250px;
+ 
+}
+
+div.notes{
+    padding-left: 250px;
+    width: 1000px; 
+}
+
+input.time{
+    width: 200px;
+}
+
+
+/* 選擇用餐時間的所有按鈕 */
+button.meal_time{
+    color: black;
+  background-color: white;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  border-color: #a9a9a9;
+  margin-left: 10px;
+  position: relative;
+  text-indent: -30px;
+  
+
+}
+
+.remainSeat {
+    border-left: 1px solid #a9a9a9;
+    position: absolute;
+    float: left;
+    top: 0;
+    bottom: 0;
+    margin-left: 140px;
+    text-indent: 0px !important;
+  }
+
+  .remainSeatNumber{
+    text-align: center !important;
+    padding-left: 20px;
+  }
+
+  .hidden-div {
+    /* 為了壓住d-flex的display */
+    display: none !important; 
+    border-left: none !important;
+  }
+
+  /* 和 .hidden-div一樣，為了避免按鈕的css刪來刪去才用不同名稱多複製幾個，這是營業時間用 */
+  .not-business {
+    /* 為了壓住d-flex的display */
+    display: none !important; 
+    border-left: none !important;
+  }
+/* 和 .hidden-div一樣，為了避免按鈕的css刪來刪去才用不同名稱多複製幾個，這是判定預約用 */
+  .hasReserved {
+    /* 為了壓住d-flex的display */
+    display: none !important; 
+    border-left: none !important;
+  }
+/* 和 .hidden-div一樣，為了避免按鈕的css刪來刪去才用不同名稱多複製幾個，這是判定客滿用 */
+  .hasFull{
+    display: none !important; 
+    border-left: none !important;
+  }
+  
+
+button.dropdown-toggle{
+    background-color: #FFDEB9;
+    color:black;
+    border-color: white;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+   
+}
+
+
+
+ul.dropdown-menu{
+    width: 300px;
+}
+
+
+/* 選擇用餐時間的所有按鈕-滑鼠移過去 */
+button.meal_time:hover{
+    background-color: #FFDEB9;
+}
+
+/* 表示非營業時間的時間按鈕樣式 */
+button.stop{
+    pointer-events: none;
+  background-color: gray !important;
+  text-indent: 0px !important;
+}
+/* 表示客滿的時間按鈕樣式 */
+button.full{
+    pointer-events: none;
+    background-color: #F8C4B4;
+    text-indent: 0px !important;
+  
+}
+/* 表示剩餘人數不足的時間按鈕樣式 */
+button.notEnough{
+    pointer-events: none;
+    background-color: #5fa8d3;
+    text-indent: -30px;
+}
+
+/* 表示該時段已預約的時間按鈕樣式 */
+button.reserved{
+    pointer-events: none;
+    background-color: #caf4e1;
+    text-indent: 0px !important;
+   
+}
+
+button.before{
+    pointer-events: none;
+    color:cadetblue
+}
+
+
+
+
+/* 最後要送出資料的那兩個按鈕 */
+button.fin{
+    color:black;
+    background-color: #FFDEB9;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border-color: white;
+    margin-right: 20px;
+   
+
+}
+/* 返回按鈕的超連結字體調整 */
+a.back{
+    color: black;
+    text-decoration: none;
+
+}
+
+img.res_Img{
+    max-width: 1100px;
+    max-height: 400px;
+}
+
+.meal-time-style {
+    background-color: #ffdeb9 !important;
+  }
+
+

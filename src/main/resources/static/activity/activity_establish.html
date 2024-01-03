@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <title>CHOOEAT！</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="./images/header/logo2.png" />
+    <!-- 引入bootstrap -->
+    <link rel="stylesheet" href="./styles/bootstrap/bootstrap.min.css" />
+
+    <!-- 以下引入我們自己寫的css -->
+    <link rel="stylesheet" href="./styles/activity/activity.css" />
+    <link rel="stylesheet" href="../prod/chooeat/styles/header/footer.css" />
+    <link rel="stylesheet" href="../prod/chooeat/styles/header/header.css" />
+  </head>
+
+  <body>
+    <header></header>
+
+    <!-- 以下為內容區域，主要對這裡做修改 -->
+    <div class="main_content">
+      <div class="activity_establish_main">
+        <div class="container">
+          <!-- 麵包屑與搜尋框 -->
+          <div class="row bread_and_search">
+            <!-- 麵包屑 -->
+            <nav
+              class="col"
+              style="--bs-breadcrumb-divider: '>'"
+              aria-label="breadcrumb"
+            >
+              <ol class="breadcrumb pt-3 ps-3">
+                <li class="breadcrumb-item">
+                  <a href="#" class="normal_a">首頁</a>
+                </li>
+                <li class="breadcrumb-item" aria-current="page">
+                  <a href="./activity.html" class="normal_a">揪團</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  揪團活動建立
+                </li>
+              </ol>
+            </nav>
+
+            <!-- 搜尋框 -->
+            <!-- 因Java有將靜態檔案設定映射名稱與前綴字，因此不用加"activity/"-->
+            <form class="col search" name="search_value">
+              <input
+                type="text"
+                class="search_value rounded-3"
+                name="search_value"
+                placeholder="搜尋..."
+              />
+              <!-- <input type="hidden" class="search_value" /> -->
+              <button type="submit" class="submit">
+                <img src="./images/search_icon.png" alt="search_icon" />
+              </button>
+            </form>
+          </div>
+
+          <!-- "開始揪團"大標 -->
+          <div class="row activity_title">
+            <h3 class="col">開始揪團</h3>
+          </div>
+
+          <!-- 建立活動表單 -->
+          <form
+            class="row activity_establish_form justify-content-around shadow p-5 mb-5"
+          >
+            <!-- 表單左側 -->
+            <section class="col activity_establish_form_left">
+              <div>
+                <label class="form-label" for="activity_name">活動名稱</label>
+                <input
+                  type="text"
+                  class="form-control border border-2"
+                  name="activity_name"
+                  id="activity_name"
+                  required
+                />
+                <span id="activity_name_error" class="error_span"
+                  >*請輸入活動名稱</span
+                >
+              </div>
+
+              <div>
+                <label class="form-label" for="activity_restaruant"
+                  >活動餐廳</label
+                >
+                <select
+                  name="activity_restaruant"
+                  class="form-select border border-2"
+                  id="activity_restaruant"
+                  required
+                >
+                  <option value="recommand_restaurant">推薦餐廳</option>
+                  <!--  -->
+                </select>
+                <span id="activity_restaruant_error" class="error_span"
+                  >*請選擇餐廳</span
+                >
+              </div>
+
+              <div>
+                <label class="form-label" for="activity_date">活動日期</label>
+                <input
+                  class="form-control border border-2"
+                  type="date"
+                  name="activity_date"
+                  id="activity_date"
+                  required
+                />
+                <span id="activity_date_error" class="error_span"
+                  >*請選擇日期</span
+                >
+              </div>
+
+              <div>
+                <label class="form-label" for="activity_starting_time"
+                  >活動開始時間</label
+                >
+                <input
+                  type="time"
+                  class="form-control border border-2"
+                  name="activity_starting_time"
+                  id="activity_starting_time"
+                  required
+                />
+                <span id="activity_starting_time_error" class="error_span"
+                  >*請選擇時間</span
+                >
+              </div>
+
+              <div>
+                <label class="form-label" for="activity_ending_time"
+                  >活動結束時間</label
+                >
+                <input
+                  type="time"
+                  class="form-control border border-2"
+                  name="activity_ending_time"
+                  id="activity_ending_time"
+                  required
+                />
+                <span id="activity_ending_time_error" class="error_span"
+                  >*請選擇時間</span
+                >
+              </div>
+
+              <div>
+                <label class="form-label" for="regesteration_starting_time"
+                  >活動報名開始時間</label
+                >
+                <input
+                  type="datetime-local"
+                  class="form-control border border-2"
+                  name="regesteration_starting_time"
+                  id="regesteration_starting_time"
+                  required
+                />
+                <span id="regesteration_starting_time_error" class="error_span"
+                  >*請選擇日期</span
+                >
+              </div>
+
+              <div>
+                <label class="form-label" for="regesteration_ending_time"
+                  >活動報名截止時間</label
+                >
+                <input
+                  type="datetime-local"
+                  class="form-control border border-2"
+                  name="regesteration_ending_time"
+                  id="regesteration_ending_time"
+                  required
+                />
+                <span id="regesteration_ending_time_error" class="error_span"
+                  >*請選擇日期</span
+                >
+              </div>
+
+              <div>
+                <label class="form-label" for="min_number">最少參加人數</label>
+                <input
+                  type="number"
+                  class="form-control border border-2"
+                  name="min_number"
+                  id="min_number"
+                  min="1"
+                  required
+                />
+                <span id="min_number_error" class="error_span"
+                  >*請填入正確人數</span
+                >
+              </div>
+
+              <div>
+                <label class="form-label" for="max_number">最多參加人數</label>
+                <input
+                  type="number"
+                  class="form-control border border-2"
+                  name="max_number"
+                  id="max_number"
+                  required
+                />
+                <span id="max_number_error" class="error_span"
+                  >*請填入正確人數</span
+                >
+              </div>
+            </section>
+            <!-- 表單右側 -->
+            <section class="col row activity_establish_form_right flex-column">
+              <!-- 聚會活動照片 -->
+              <div class="col mt">
+                <label class="form-label" for="activity_photo"
+                  >封面照片上傳</label
+                >
+                <input
+                  type="file"
+                  class="form-control border border-2"
+                  name="activity_photo"
+                  id="activity_photo"
+                  accept=".jpg, .jpeg, .png"
+                  required
+                />
+                <span id="activity_photo_error" class="error_span"
+                  >*請上傳照片</span
+                >
+                <div class="show_photo mt-3 border border-2">照片預覽</div>
+              </div>
+
+              <!-- 聚會活動內容 -->
+              <div class="col">
+                <label class="form-label" for="activity_text"
+                  >聚會活動內容簡介</label
+                >
+                <textarea
+                  name="activity_text"
+                  class="form-control border-2"
+                  id="activity_text"
+                  cols="50"
+                  rows="6"
+                ></textarea>
+              </div>
+            </section>
+
+            <!-- 按鈕們 -->
+            <section class="row btns justify-content-center">
+              <div class="col-2">
+                <!--點擊送出鈕會彈窗-->
+                <button
+                  type="button"
+                  class="btn btn-outline-warning form_submit"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  disabled
+                >
+                  送出
+                </button>
+              </div>
+              <div class="col-2">
+                <button type="reset" class="btn btn-outline-danger">
+                  清除
+                </button>
+              </div>
+            </section>
+          </form>
+
+          <!--活動建立彈窗-->
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog w-75 h-auto">
+              <div class="modal-content">
+                <div class="modal-body mb-5 m">
+                  <h3
+                    class="modal-title text-center mt-5"
+                    id="exampleModalLabel"
+                  >
+                    確認送出?
+                  </h3>
+                </div>
+                <div class="row justify-content-around mt-5 pb-3">
+                  <button
+                    type="button"
+                    class="btn btn-outline-danger w-25"
+                    data-bs-dismiss="modal"
+                  >
+                    取消
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-success w-25 check_submit"
+                  >
+                    送出
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--footer-->
+    <div class="container-fluid footer_container"></div>
+
+    <!-- 引入 Bootstrap JS -->
+    <script src="./js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- 引入自己的JS -->
+    <script src="./js/vendors/jquery/jquery-3.4.1.min.js"></script>
+    <script src="./js/activity/header.js"></script>
+    <script src="./js/activity/footer.js"></script>
+    <script src="./js/activity/activity_estiblish.js"></script>
+    <script src="./js/activity/activity_login.js"></script>
+  </body>
+</html>

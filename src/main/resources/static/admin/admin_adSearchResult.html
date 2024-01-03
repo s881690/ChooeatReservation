@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>廣告查詢結果</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/5c840decb8.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/admin_adSearchResult.css">
+    <link rel="stylesheet" type="text/css" href="css/admin_util.css">
+    <link rel="shortcut icon" href="images/header/logo2.png">
+
+</head>
+
+<body>
+    <script type="text/javascript" src="js/header.js"></script>
+
+    <div class="main_content">
+        <div class="container">
+            <div class="row">
+                <div class="col-1">
+                    <button class="btn" id="goBack">
+                        <i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
+                    </button>
+                </div>
+                <div class="col-10 tableName">
+                    <h2>廣告詳細資訊</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="rounded shadow-sm plate">
+            <div class="container">
+                <form action="#">
+                    <div class="row">
+                        <div class="col-12 mt-3">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h4>廣告資訊</h4>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row mb-1">
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            廣告編號：
+                                        </div>
+                                        <div class="col-8" id="adId">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-4">
+                                            廣告方案：
+                                        </div>
+                                        <div class="col-8" id="adPlan">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-4">
+                                            申請時間：
+                                        </div>
+                                        <div class="col-8" id="adApplyTimestamp">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-4">
+                                            廣告推送時間：
+                                        </div>
+                                        <div class="col-8" id="adTime">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-4">
+                                            總金額：
+                                        </div>
+                                        <div class="col-8" id="adAmount">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3 align-items-center">
+                                        <div class="col-4">
+                                            審核狀態：
+                                        </div>
+                                        <div class="col-8">
+                                            <select class="form-select" id="adCheck">
+                                                <option value="0">未審核</option>
+                                                <option value="1">審核中</option>
+                                                <option value="2">已審核</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="row mt-3 align-items-center">
+                                        <div class="col-4">
+                                            廣告狀態：
+                                        </div>
+                                        <div class="col-8" id="adState">
+                                            <select class="form-select">
+                                                <option selected value="0">尚未審核</option>
+                                                <option value="1">等待上架</option>
+                                                <option value="2">上架中</option>
+                                                <option value="3">已結束</option>
+                                                <option value="4">已取消</option>
+                                            </select>
+                                        </div>
+                                    </div> -->
+                                    <div class="row mt-3">
+                                        <div class="col-4">
+                                            審核人員：
+                                        </div>
+                                        <div class="col-8" id="adminId">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-4">
+                                            審核通過時間：
+                                        </div>
+                                        <div class="col-8" id="adCheckTimestamp">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            廣告介紹：
+                                        </div>
+                                        <div class="col-9" id="adText">
+                                            <p>
+                                                這是一段廣告介紹文字
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+
+                            <div class="row mt-5">
+                                <div class="col-10">
+                                    <h4>餐廳資訊</h4>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row align-items-center mb-1">
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            餐廳編號：
+                                        </div>
+                                        <div class="col-8" id="resId">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-4">
+                                            餐廳名稱：
+                                        </div>
+                                        <div class="col-8" id="resName">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            餐廳電話： 
+                                        </div>
+                                        <div class="col-8" id="resTel">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-4">
+                                            餐廳信箱： 
+                                        </div>
+                                        <div class="col-8" id="resEmail">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- <div class="container">
+            <div class="row justify-content-center mt-4">
+                <div class="col-3 text-center">
+                    <button class="btn btn-outline-dark submitBtn">
+                        送出修改結果
+                    </button>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <script type="text/javascript" src="js/footer.js"></script>
+    
+    <script type="text/javascript" src="js/admin_adSearchResult.js"></script>
+</body>
+
+</html>

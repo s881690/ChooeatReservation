@@ -1,0 +1,74 @@
+img.res_Img{
+    max-width: 1100px;
+    max-height: 400px;
+}
+
+
+
+div.resSuccessInfo{
+
+    border: 1px solid #a9a9a9;
+    width: 800px;
+    margin: 30px 0;
+   
+}
+
+div.title{
+    /* border: 1px solid purple; */
+    margin-top: 30px;
+}
+
+div.changeRemind{
+    background-color: #F8C4B4;
+    height: 70px;
+}
+
+h1{
+    font-size: 36px;
+    font-weight: 800;
+
+}
+
+
+h2{
+    font-size: 24px;
+    font-weight: 800;
+}
+
+h3{
+    font-size: 24px;
+    font-weight: 800;
+    color:#8b0000;
+    /* border: 1px solid purple; */
+    margin-bottom: 0;
+
+}
+
+img.check{
+    /* border: 1px solid red; */
+    margin-right: 10px;
+    max-height: 30px;
+}
+
+div.resInfo{
+    /* border: 1px solid green; */
+    margin: 20px;
+}
+
+button.resChange{
+    color:black;
+    background-color: #FFDEB9;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border-color: white;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+}
+
+a.resChange{
+    color: black;
+    text-decoration: none;
+
+}

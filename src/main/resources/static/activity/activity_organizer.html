@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <title>CHOOEAT！</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="./images/header/logo2.png" />
+    <!-- 引入bootstrap -->
+    <link rel="stylesheet" href="./styles/bootstrap/bootstrap.min.css" />
+
+    <!-- 以下引入我們自己寫的css -->
+    <link rel="stylesheet" href="./styles/activity/activity.css" />
+    <link rel="stylesheet" href="../prod/chooeat/styles/header/footer.css" />
+    <link rel="stylesheet" href="../prod/chooeat/styles/header/header.css" />
+
+    <!-- 引入Font awesome -->
+    <script
+      src="https://kit.fontawesome.com/956a3e277d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header></header>
+
+    <!-- 以下為內容區域，主要對這裡做修改 -->
+    <div class="main_content">
+      <div class="main_content activity_main_organizer">
+        <div class="container">
+          <!-- 麵包屑與搜尋框 -->
+          <div class="row bread_and_search">
+            <!-- 麵包屑 -->
+            <nav
+              class="col"
+              style="--bs-breadcrumb-divider: '>'"
+              aria-label="breadcrumb"
+            >
+              <ol class="breadcrumb pt-3 ps-3">
+                <li class="breadcrumb-item">
+                  <a href="#" class="normal_a">首頁</a>
+                </li>
+                <li class="breadcrumb-item" aria-current="page">
+                  <a href="./activity.html" class="normal_a">揪團</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  揪團發起人審核頁
+                </li>
+              </ol>
+            </nav>
+
+            <!-- 搜尋框 -->
+            <!-- 因Java有將靜態檔案設定映射名稱與前綴字，因此不用加"activity/"-->
+            <form class="col search" name="search_value">
+              <input
+                type="text"
+                class="search_value rounded-3"
+                name="search_value"
+                placeholder="搜尋..."
+              />
+              <!-- <input type="hidden" class="search_value" /> -->
+              <button type="submit" class="submit">
+                <img src="./images/search_icon.png" alt="search_icon" />
+              </button>
+            </form>
+          </div>
+
+          <!-- 搜尋報名人員 -->
+          <form class="participant_search">
+            <input
+              class="col-2 rounded-3 member_search_value"
+              type="text"
+              placeholder="搜尋報名者"
+            />
+            <button class="col-2 member_search" type="submit">
+              <img src="./images/search_icon.png" alt="search_icon" />
+            </button>
+          </form>
+
+          <!-- 報名者列表 -->
+          <table class="table table-striped participant_list mt-5 mb-5">
+            <thead>
+              <tr>
+                <!-- <th scope="col">會員照片</th> -->
+                <th scope="col">會員名稱</th>
+                <th scope="col">暱稱</th>
+                <th scope="col">所在地區</th>
+                <th scope="col">想跟你說的話</th>
+                <th scope="col">操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>Otto</td>
+                <td>
+                  <button class="btn btn-outline-secondary unsigned">
+                    待審核
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td>Otto</td>
+                <td><button class="btn btn-outline-warning">審核中</button></td>
+              </tr>
+              <tr>
+                <td>Larry the Bird</td>
+                <td>@twitter</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>
+                  <button class="btn btn-outline-success signed" disabled>
+                    審核完成
+                  </button>
+                </td>
+              </tr> -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!--footer-->
+    <div class="container-fluid footer_container"></div>
+
+    <!-- 引入 JQ -->
+    <script src="./js/vendors/jquery/jquery-3.4.1.min.js"></script>
+    <!-- 引入 自訂 JS -->
+    <script src="./js/activity/header.js"></script>
+    <script src="./js/activity/footer.js"></script>
+    <script src="./js/activity/activity_organizer.js"></script>
+    <!-- 引入 Bootstrap JS -->
+    <script src="./js/bootstrap/bootstrap.min.js"></script>
+    <script src="./js/activity/activity_login.js"></script>
+  </body>
+</html>

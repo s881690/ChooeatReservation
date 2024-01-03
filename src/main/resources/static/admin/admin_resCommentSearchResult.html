@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>餐廳評論查詢結果</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/5c840decb8.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/admin_orderSearchResult.css">
+    <link rel="stylesheet" type="text/css" href="css/admin_util.css">
+    <link rel="shortcut icon" href="images/header/logo2.png">
+
+</head>
+
+<body>
+    <script type="text/javascript" src="js/header.js"></script>
+
+    <div class="main_content">
+        <div class="container">
+            <div class="row">
+                <div class="col-1">
+                    <button class="btn" id="goBack">
+                        <i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
+                    </button>
+                </div>
+                <div class="col-10 tableName">
+                    <h2>餐廳評論詳細資訊</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="rounded shadow-sm plate">
+            <div class="container">
+                <div>
+                    <div class="row">
+                        <div class="col-12 mt-3">
+                            <div class="row">
+                                <div class="col-10">
+                                    <h4>評論資訊</h4>
+                                </div>
+                                <!-- <div class="col-2">
+                                    <button class="btn btn-outline-danger" style="margin-left: 39px;" id="hiddenComment">
+                                        <i class="fa-regular fa-circle-xmark"></i>
+                                        隱藏評論
+                                    </button>
+                                </div> -->
+                            </div>
+                            <hr>
+                            <div class="row align-items-center mb-1">
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            評論編號：
+                                        </div>
+                                        <div class="col-9" id="resCommentId">
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-3">
+                                            評論狀態：
+                                        </div>
+                                        <div class="col-9" id="resCommentState">
+                                            已評論
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            評論時間：
+                                        </div>
+                                        <div class="col-9" id="resCommentTimestamp">
+                                         
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-3">
+                                            評論分數：
+                                        </div>
+                                        <div class="col-9" id="resCommentScore">
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center mb-1">
+                                <div class="col-12">
+                                    <div class="row mt-3">
+                                        <div class="col-1" style="width: 130px">
+                                            評論內容：
+                                        </div>
+                                        <div class="col-10" id="resCommentText">
+                                            <p>
+                                            這是一段五星好評模板。這是一段五星好評模板。這是一段五星好評模板。這是一段五星好評模板。這是一段五星好評模板。這是一段五星好評模板。這是一段五星好評模板。這是一段五星好評模板。這是一段五星好評模板。這是一段五星好評。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-10">
+                                    <h4>會員資訊</h4>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row align-items-center mb-1">
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            會員編號： 
+                                        </div>
+                                        <div class="col-9" id="accId">
+                                          
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-3">
+                                            會員帳號： 
+                                        </div>
+                                        <div class="col-9" id="accAcc">
+                                         
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-3">
+                                            會員名稱： 
+                                        </div>
+                                        <div class="col-9" id="accName">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            會員暱稱： 
+                                        </div>
+                                        <div class="col-9" id="accNickname">
+                                          
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-3">
+                                            會員電話： 
+                                        </div>
+                                        <div class="col-9" id="accPhone">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-3">
+                                            會員信箱： 
+                                        </div>
+                                        <div class="col-9" id="accMail">
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-5">
+                                <div class="col-10">
+                                    <h4>餐廳資訊</h4>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row align-items-center mb-1">
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            餐廳編號：
+                                        </div>
+                                        <div class="col-8" id="resId">
+                                          
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-4">
+                                            餐廳名稱：
+                                        </div>
+                                        <div class="col-8" id="resName">
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            餐廳回覆時間： 
+                                        </div>
+                                        <div class="col-8" id="resReplyTimestamp">
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3" style="visibility: hidden;">
+                                        <div class="col">
+                                            拿來撐空間的，因為我現在想不到怎麼調，沒時間啦
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center mb-1">
+                                <div class="col-12">
+                                    <div class="row mt-3">
+                                        <div class="col-2">
+                                            餐廳回覆內容：
+                                        </div>
+                                        <div class="col-10" id="resReplyText">
+                                            <p>
+                                                這是一段五星好評模板。這是一段五星好評模板。這是一段五星好評模板。這是一段五星好評模板。這是一段五星好評模板。這是一段五星好評模板。這是一段五星好評模板。這是一段五星好評模板。這是一段五星好評模板。這是一段五星好評。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/footer.js"></script>
+    
+    <script type="text/javascript" src="js/admin_resCommentSearchResult.js"></script>
+</body>
+
+</html>

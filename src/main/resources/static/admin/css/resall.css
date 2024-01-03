@@ -1,0 +1,13 @@
+
+*{
+    /* 頁面上所有元素，寬高從邊框開始算起 */
+    box-sizing: border-box;
+}
+
+body{
+    width: 1200px;
+    margin: 0 auto;
+    background-color: F5F5F5;
+}
+
+

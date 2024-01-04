@@ -11,13 +11,18 @@ services:
       - mynetwork
   mysql:
     image: mysql:8.0.33
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     volumes:
       - ./src/main/resources/static:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: chooeat
     ports:
-      - "3307:3306"
+      - "3306:3306"
     networks:  # 将服务连接到自定义网络
       - mynetwork
   redis:

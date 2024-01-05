@@ -17,6 +17,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Import;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import chooeat.restaurant.dao.RestaurantDAO;
@@ -27,32 +28,22 @@ import chooeat.restaurant.model.vo.ResTypeVO;
 import chooeat.restaurant.model.vo.ReservationVO;
 import chooeat.restaurant.model.vo.RestaurantVO;
 @Repository
-@Import(DataSourceAutoConfiguration.class)
+
 public class RestaurantDaoImpl implements RestaurantDAO {
 	@Autowired
-	private DataSource dataSource;
+	private JdbcTemplate jdbcTemplate;
+
 	@Override
-	public int restaurantregister(List<String> values) {		
+	public int restaurantregister(List<String> values) {
+		String sql = "INSERT INTO restaurant (res_acc, res_pass, res_state, res_name, res_add, res_tel, res_email, res_start_time, res_end_time, res_seat_number, single_meal, res_max_num) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-		String sql = "INSERT INTO restaurant (res_acc, res_pass, res_state, res_name, res_add, res_tel, res_email, res_start_time, res_end_time, res_seat_number, single_meal, res_max_num) "
-				+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
-			Connection conn = dataSource.getConnection();
-			PreparedStatement pstmt = conn.prepareStatement(sql);
-
-			for (int i = 0; i < values.size(); i++) {
-				pstmt.setString(i + 1, values.get(i));
-			}
-
-			pstmt.executeUpdate();
-			pstmt.close();
-			conn.close();
-
-		} catch (SQLException e) {
+			jdbcTemplate.update(sql, values.toArray());
+			return 1;
+		} catch (Exception e) {
 			e.printStackTrace();
 			return 2;
 		}
-		return 1;
 	}
 
 	@Override

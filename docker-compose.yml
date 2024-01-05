@@ -5,14 +5,16 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - mysql
-      - redis
-    networks:  # 将服务连接到自定义网络
+      mysql:
+        condition: service_healthy 
+      redis:
+        condition: service_healthy
+    networks:
       - mynetwork
   mysql:
     image: mysql:8.0.33
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -23,13 +25,18 @@ services:
       MYSQL_DATABASE: chooeat
     ports:
       - "3306:3306"
-    networks:  # 将服务连接到自定义网络
+    networks:
       - mynetwork
   redis:
     image: redis
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     ports:
       - "6379:6379"
-    networks:  # 将服务连接到自定义网络
+    networks:
       - mynetwork
 networks:
-  mynetwork:  # 定义自定义网络
+  mynetwork: # 自定义网络

@@ -102,6 +102,48 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.34.1</version>
+				<configuration>
+					<images>
+						<image>
+							<name>app</name>
+							<build>
+								<from>openjdk:17</from>
+								<entryPoint>
+									<exec>
+										<arg>/wait-for-it.sh</arg>
+										<arg>mysql:3306</arg>
+										<arg>--</arg>
+										<arg>java</arg>
+										<arg>-jar</arg>
+										<arg>/app.jar</arg>
+									</exec>
+								</entryPoint>
+								<assembly>
+									<descriptorRef>artifact</descriptorRef>
+									<inline>
+										<files>
+											<file>
+												<source>${project.basedir}/wait-for-it.sh</source>
+												<outputDirectory>/</outputDirectory>
+												<fileMode>0755</fileMode> <!-- 设置执行权限 -->
+											</file>
+											<file>
+												<source>${project.build.directory}/out/artifacts/ChooeatReservation.jar</source>
+												<outputDirectory>/</outputDirectory>
+											</file>
+										</files>
+									</inline>
+								</assembly>
+							</build>
+						</image>
+					</images>
+				</configuration>
+			</plugin>
+
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>

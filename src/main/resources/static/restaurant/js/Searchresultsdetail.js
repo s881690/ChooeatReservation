@@ -24,8 +24,8 @@ function arrayBufferToBase64(buffer) {
 
 
 //餐廳圖片
-const photoBase64 = arrayBufferToBase64(result["myself"][0].resPhoto);
-const imageSrc = `data:image/jpeg;base64,${photoBase64}`;
+// const photoBase64 = arrayBufferToBase64(result["myself"][0].resPhoto);
+const imageSrc = `data:image/jpeg;base64,${result["myself"][0].resPhoto}`;
 var ddd = document.getElementById("ddd");
 var newDiv = document.createElement("div");
 newDiv.innerHTML = ` 

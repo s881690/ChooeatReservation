@@ -85,16 +85,16 @@ $(document).ready(function () {
     dataType: "json",
     success: function (response) { 
 
-      const photoBase640 = arrayBufferToBase64(response[0].resPhoto);
-      const imageSrc0 = `data:image/jpeg;base64,${photoBase640}`;
-      const photoBase641 = arrayBufferToBase64(response[1].resPhoto);
-      const imageSrc1 = `data:image/jpeg;base64,${photoBase641}`;
-      const photoBase642 = arrayBufferToBase64(response[2].resPhoto);
-      const imageSrc2 = `data:image/jpeg;base64,${photoBase642}`;
-      const photoBase643 = arrayBufferToBase64(response[3].resPhoto);
-      const imageSrc3 = `data:image/jpeg;base64,${photoBase643}`;
-      const photoBase644 = arrayBufferToBase64(response[4].resPhoto);
-      const imageSrc4 = `data:image/jpeg;base64,${photoBase644}`;  
+      // const photoBase640 = arrayBufferToBase64(response[0].resPhoto);
+      const imageSrc0 = `data:image/jpeg;base64,${response[0].resPhoto}`;
+      // const photoBase641 = arrayBufferToBase64(response[1].resPhoto);
+      const imageSrc1 = `data:image/jpeg;base64,${response[1].resPhoto}`;
+      // const photoBase642 = arrayBufferToBase64(response[2].resPhoto);
+      const imageSrc2 = `data:image/jpeg;base64,${response[2].resPhoto}`;
+      // const photoBase643 = arrayBufferToBase64(response[3].resPhoto);
+      const imageSrc3 = `data:image/jpeg;base64,${response[3].resPhoto}`;
+      // const photoBase644 = arrayBufferToBase64(response[4].resPhoto);
+      const imageSrc4 = `data:image/jpeg;base64,${response[4].resPhoto}`;  
   
     var ddd = document.getElementById("ddd");
     var newDiv = document.createElement("div");

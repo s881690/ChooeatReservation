@@ -1,14 +1,12 @@
 package chooeat.restaurant.daoimpl;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Timestamp;
+import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.Set;
 
@@ -79,16 +77,36 @@ public class RestaurantDaoImpl implements RestaurantDAO {
 				restaurant.setResMaxNum(rs.getInt("res_max_num"));
 
 				// 處理圖片資料
-				byte[] photoBytes = rs.getBytes("res_photo");
-				if (photoBytes != null && photoBytes.length > 0) {
-					Byte[] photoWrapper = new Byte[photoBytes.length];
-					for (int i = 0; i < photoBytes.length; i++) {
-						photoWrapper[i] = photoBytes[i];
+				Blob blob = rs.getBlob("res_photo");
+				if (blob != null) {
+					InputStream inputStream = blob.getBinaryStream();
+					ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+					byte[] buffer = new byte[4096];
+					int bytesRead;
+					while (true) {
+						try {
+							if (!((bytesRead = inputStream.read(buffer)) != -1)) break;
+						} catch (IOException e) {
+							throw new RuntimeException(e);
+						}
+						outputStream.write(buffer, 0, bytesRead);
 					}
-					restaurant.setResPhoto(photoWrapper);
+					byte[] photoBytes = outputStream.toByteArray();
+					String photoBase64 = Base64.getEncoder().encodeToString(photoBytes);
+					restaurant.setResPhoto(photoBase64);
 				} else {
 					restaurant.setResPhoto(null);
 				}
+//				byte[] photoBytes = rs.getBytes("res_photo");
+//				if (photoBytes != null && photoBytes.length > 0) {
+//					Byte[] photoWrapper = new Byte[photoBytes.length];
+//					for (int i = 0; i < photoBytes.length; i++) {
+//						photoWrapper[i] = photoBytes[i];
+//					}
+//					restaurant.setResPhoto(photoWrapper);
+//				} else {
+//					restaurant.setResPhoto(null);
+//				}
 				return restaurant;
 			}
 		});
@@ -125,16 +143,36 @@ public class RestaurantDaoImpl implements RestaurantDAO {
 				restaurant.setResMaxNum(rs.getInt("res_max_num"));
 
 				// 處理圖片資料
-				byte[] photoBytes = rs.getBytes("res_photo");
-				if (photoBytes != null && photoBytes.length > 0) {
-					Byte[] photoWrapper = new Byte[photoBytes.length];
-					for (int i = 0; i < photoBytes.length; i++) {
-						photoWrapper[i] = photoBytes[i];
+				Blob blob = rs.getBlob("res_photo");
+				if (blob != null) {
+					InputStream inputStream = blob.getBinaryStream();
+					ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+					byte[] buffer = new byte[4096];
+					int bytesRead;
+					while (true) {
+						try {
+							if (!((bytesRead = inputStream.read(buffer)) != -1)) break;
+						} catch (IOException e) {
+							throw new RuntimeException(e);
+						}
+						outputStream.write(buffer, 0, bytesRead);
 					}
-					restaurant.setResPhoto(photoWrapper);
+					byte[] photoBytes = outputStream.toByteArray();
+					String photoBase64 = Base64.getEncoder().encodeToString(photoBytes);
+					restaurant.setResPhoto(photoBase64);
 				} else {
 					restaurant.setResPhoto(null);
 				}
+//				byte[] photoBytes = rs.getBytes("res_photo");
+//				if (photoBytes != null && photoBytes.length > 0) {
+//					Byte[] photoWrapper = new Byte[photoBytes.length];
+//					for (int i = 0; i < photoBytes.length; i++) {
+//						photoWrapper[i] = photoBytes[i];
+//					}
+//					restaurant.setResPhoto(photoWrapper);
+//				} else {
+//					restaurant.setResPhoto(null);
+//				}
 				return restaurant;
 			}
 		});
@@ -260,16 +298,36 @@ public class RestaurantDaoImpl implements RestaurantDAO {
 				restaurantVO.setResIntro(rs.getString("res_intro"));
 
 				// 處理圖片資料
-				byte[] photoBytes = rs.getBytes("res_photo");
-				if (photoBytes != null && photoBytes.length > 0) {
-					Byte[] photoWrapper = new Byte[photoBytes.length];
-					for (int i = 0; i < photoBytes.length; i++) {
-						photoWrapper[i] = photoBytes[i];
+				Blob blob = rs.getBlob("res_photo");
+				if (blob != null) {
+					InputStream inputStream = blob.getBinaryStream();
+					ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+					byte[] buffer = new byte[4096];
+					int bytesRead;
+					while (true) {
+						try {
+							if (!((bytesRead = inputStream.read(buffer)) != -1)) break;
+						} catch (IOException e) {
+							throw new RuntimeException(e);
+						}
+						outputStream.write(buffer, 0, bytesRead);
 					}
-					restaurantVO.setResPhoto(photoWrapper);
+					byte[] photoBytes = outputStream.toByteArray();
+					String photoBase64 = Base64.getEncoder().encodeToString(photoBytes);
+					restaurantVO.setResPhoto(photoBase64);
 				} else {
 					restaurantVO.setResPhoto(null);
 				}
+//				byte[] photoBytes = rs.getBytes("res_photo");
+//				if (photoBytes != null && photoBytes.length > 0) {
+//					Byte[] photoWrapper = new Byte[photoBytes.length];
+//					for (int i = 0; i < photoBytes.length; i++) {
+//						photoWrapper[i] = photoBytes[i];
+//					}
+//					restaurantVO.setResPhoto(photoWrapper);
+//				} else {
+//					restaurantVO.setResPhoto(null);
+//				}
 				return restaurantVO;
 			}
 		});
@@ -451,16 +509,36 @@ public class RestaurantDaoImpl implements RestaurantDAO {
 				restaurantVO.setResMaxNum(rs.getInt("res_max_num"));
 
 				// 處理圖片資料
-				byte[] photoBytes = rs.getBytes("res_photo");
-				if (photoBytes != null && photoBytes.length > 0) {
-					Byte[] photoWrapper = new Byte[photoBytes.length];
-					for (int i = 0; i < photoBytes.length; i++) {
-						photoWrapper[i] = photoBytes[i];
+				Blob blob = rs.getBlob("res_photo");
+				if (blob != null) {
+					InputStream inputStream = blob.getBinaryStream();
+					ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+					byte[] buffer = new byte[4096];
+					int bytesRead;
+					while (true) {
+						try {
+							if (!((bytesRead = inputStream.read(buffer)) != -1)) break;
+						} catch (IOException e) {
+							throw new RuntimeException(e);
+						}
+						outputStream.write(buffer, 0, bytesRead);
 					}
-					restaurantVO.setResPhoto(photoWrapper);
+					byte[] photoBytes = outputStream.toByteArray();
+					String photoBase64 = Base64.getEncoder().encodeToString(photoBytes);
+					restaurantVO.setResPhoto(photoBase64);
 				} else {
 					restaurantVO.setResPhoto(null);
 				}
+//				byte[] photoBytes = rs.getBytes("res_photo");
+//				if (photoBytes != null && photoBytes.length > 0) {
+//					Byte[] photoWrapper = new Byte[photoBytes.length];
+//					for (int i = 0; i < photoBytes.length; i++) {
+//						photoWrapper[i] = photoBytes[i];
+//					}
+//					restaurantVO.setResPhoto(photoWrapper);
+//				} else {
+//					restaurantVO.setResPhoto(null);
+//				}
 				return restaurantVO;
 			}
 		});
@@ -643,16 +721,37 @@ public class RestaurantDaoImpl implements RestaurantDAO {
 				RestaurantVO restaurantVO = new RestaurantVO();
 				restaurantVO.setRestaurantId(rs.getInt("restaurant_id"));
 				restaurantVO.setResAcc(rs.getString("res_acc"));
-				byte[] photoBytes = rs.getBytes("res_photo");
-				if (photoBytes != null && photoBytes.length > 0) {
-					Byte[] photoWrapper = new Byte[photoBytes.length];
-					for (int i = 0; i < photoBytes.length; i++) {
-						photoWrapper[i] = photoBytes[i];
+
+				Blob blob = rs.getBlob("res_photo");
+				if (blob != null) {
+					InputStream inputStream = blob.getBinaryStream();
+					ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+					byte[] buffer = new byte[4096];
+					int bytesRead;
+					while (true) {
+						try {
+							if (!((bytesRead = inputStream.read(buffer)) != -1)) break;
+						} catch (IOException e) {
+							throw new RuntimeException(e);
+						}
+						outputStream.write(buffer, 0, bytesRead);
 					}
-					restaurantVO.setResPhoto(photoWrapper);
+					byte[] photoBytes = outputStream.toByteArray();
+					String photoBase64 = Base64.getEncoder().encodeToString(photoBytes);
+					restaurantVO.setResPhoto(photoBase64);
 				} else {
 					restaurantVO.setResPhoto(null);
 				}
+//				byte[] photoBytes = rs.getBytes("res_photo");
+//				if (photoBytes != null && photoBytes.length > 0) {
+//					Byte[] photoWrapper = new Byte[photoBytes.length];
+//					for (int i = 0; i < photoBytes.length; i++) {
+//						photoWrapper[i] = photoBytes[i];
+//					}
+//					restaurantVO.setResPhoto(photoWrapper);
+//				} else {
+//					restaurantVO.setResPhoto(null);
+//				}
 				return restaurantVO;
 			}
 		});

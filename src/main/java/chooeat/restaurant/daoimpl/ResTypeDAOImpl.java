@@ -8,8 +8,13 @@ import org.springframework.stereotype.Repository;
 import chooeat.restaurant.dao.ResTypeDAO;
 import chooeat.restaurant.model.vo.RestaurantVO;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Base64;
 import java.util.List;
 
 @Repository
@@ -50,16 +55,37 @@ public class ResTypeDAOImpl implements ResTypeDAO {
 				restaurant.setResTotalNumber(rs.getInt("res_total_number"));
 				restaurant.setResMaxNum(rs.getInt("res_max_num"));
 
-				byte[] photoBytes = rs.getBytes("res_photo");
-				if (photoBytes != null && photoBytes.length > 0) {
-					Byte[] photoWrapper = new Byte[photoBytes.length];
-					for (int i = 0; i < photoBytes.length; i++) {
-						photoWrapper[i] = photoBytes[i];
+				Blob blob = rs.getBlob("res_photo");
+				if (blob != null) {
+					InputStream inputStream = blob.getBinaryStream();
+					ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+					byte[] buffer = new byte[4096];
+					int bytesRead;
+					while (true) {
+						try {
+							if (!((bytesRead = inputStream.read(buffer)) != -1)) break;
+						} catch (IOException e) {
+							throw new RuntimeException(e);
+						}
+						outputStream.write(buffer, 0, bytesRead);
 					}
-					restaurant.setResPhoto(photoWrapper);
+					byte[] photoBytes = outputStream.toByteArray();
+					String photoBase64 = Base64.getEncoder().encodeToString(photoBytes);
+					restaurant.setResPhoto(photoBase64);
 				} else {
 					restaurant.setResPhoto(null);
 				}
+
+//				byte[] photoBytes = rs.getBytes("res_photo");
+//				if (photoBytes != null && photoBytes.length > 0) {
+//					Byte[] photoWrapper = new Byte[photoBytes.length];
+//					for (int i = 0; i < photoBytes.length; i++) {
+//						photoWrapper[i] = photoBytes[i];
+//					}
+//					restaurant.setResPhoto(photoWrapper);
+//				} else {
+//					restaurant.setResPhoto(null);
+//				}
 
 				return restaurant;
 			}

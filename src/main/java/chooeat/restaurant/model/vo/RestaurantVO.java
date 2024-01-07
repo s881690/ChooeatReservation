@@ -29,19 +29,26 @@ public class RestaurantVO implements Serializable {
 	private Integer resTotalScore; // 餐廳評論總分
 	private Integer resTotalNumber; // 餐廳評論總人數
 	private Integer resMaxNum; // 每時段可訂位座位上限
-    private Byte[] resPhoto;// 餐廳照片
-        
+//    private Byte[] resPhoto;// 餐廳照片
+    private  String resPhoto;
 	public RestaurantVO() {
 
 	}
-	
-	public Byte[] getResPhoto() {
+
+	public String getResPhoto() {
 		return resPhoto;
 	}
 
-	public void setResPhoto(Byte[] resPhoto) {
+	public void setResPhoto(String resPhoto) {
 		this.resPhoto = resPhoto;
 	}
+//	public Byte[] getResPhoto() {
+//		return resPhoto;
+//	}
+//
+//	public void setResPhoto(Byte[] resPhoto) {
+//		this.resPhoto = resPhoto;
+//	}
 
 	public Integer getRestaurantId() {
 		return restaurantId;

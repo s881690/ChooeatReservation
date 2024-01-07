@@ -17,11 +17,17 @@
    const resPhoto=obj.resPhoto;
 
    // 圖片轉B64編碼字串
-   const photoBase64 = arrayBufferToBase64(resPhoto);
-   const imageSrc = `data:image/jpeg;base64,${photoBase64}`;
+//   const photoBase64 = arrayBufferToBase64(resPhoto);
+//   const imageSrc = `data:image/jpeg;base64,${photoBase64}`;
+//   let blob = new Blob(resPhoto);
+//    let imageSrc = getcreateObjURL(resPhoto);
+
+   const imageSrc = `data:image/jpeg;base64,${resPhoto}`;
+console.log(resPhoto)
    var newDiv = document.createElement("div");
    newDiv.classList.add("card-body");
-   newDiv.id = "aaa";
+   newDiv.classList.add("card-div");
+//    newDiv.id = "aaa";
    newDiv.innerHTML = ` 
    <div id="fff">
    <img src="${imageSrc}" alt="我是餐廳圖片" />
@@ -46,8 +52,24 @@
 	 </div>
    </div>	
 	`;
-   bbb.appendChild(newDiv);
+ // 將新元素添加到容器中
+ bbb.appendChild(newDiv);
  }
+
+ function getcreateObjURL(base64photo) {
+    // if (base64photo == null || base64photo == "null") {
+    //     return nophoto;
+    // }
+     const imageBinaryStr = atob(base64photo);
+    let len = imageBinaryStr.length;
+    const uint8Array = new Uint8Array(len);
+    while (len--) {
+        uint8Array[len] = imageBinaryStr.charCodeAt(len);
+    }
+    const blob = new Blob([uint8Array]);
+    return URL.createObjectURL(blob);
+}
+
 // 将字节数组转换为 Base64 编码的字符串
 function arrayBufferToBase64(buffer) {
 	var binary = '';

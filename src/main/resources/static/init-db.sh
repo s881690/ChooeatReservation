@@ -5,4 +5,4 @@ while ! mysqladmin ping -h"mysql" --silent; do
 done
 
 # 导入数据
-mysql -h db -u root -p${MYSQL_ROOT_PASSWORD} ${MYSQL_DATABASE} < /docker-entrypoint-initdb.d/chooeat_all.sql
+mysql -h db -u root -p${MYSQL_ROOT_PASSWORD} ${MYSQL_DATABASE} < /docker-entrypoint-initdb.d/chooeat_20240107.sql

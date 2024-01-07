@@ -15,6 +15,7 @@ services:
       - mynetwork
   mysql:
     image: mysql:8.0.33
+    container_name: chooeatreservation-mysql-1
     healthcheck:
       test: ["CMD-SHELL", "mysqladmin -uroot -p'$MYSQL_ROOT_PASSWORD' ping"]
       interval: 10s
@@ -31,6 +32,7 @@ services:
       - mynetwork
   redis:
     image: redis
+    container_name: chooeatreservation-redis-1
     healthcheck:
       test: [ "CMD", "redis-cli", "ping" ]
       interval: 10s

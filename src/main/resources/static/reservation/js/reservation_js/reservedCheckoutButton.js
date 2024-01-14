@@ -39,8 +39,9 @@ button.addEventListener('click', function() {
   }
 
   const index = sessionStorage.getItem('index');
+  console.log(index);
   // 發送請求給後端
-  fetch('/reservation?index=' + index)
+  fetch('/reservation?index=' + encodeURIComponent(index))
     .then(response => response.json())
     .then(data => {
       // 檢查回傳的物件中的status屬性

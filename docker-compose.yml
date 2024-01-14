@@ -6,21 +6,23 @@ services:
       - "8080:8080"
     environment:
       DATABASE_HOST: chooeatreservation-mysql-1
+      REDIS_HOST: chooeatreservation-redis-1
     depends_on:
       mysql:
         condition: service_healthy 
       redis:
         condition: service_healthy
     networks:
-      - mynetwork
+      - net
   mysql:
     image: mysql:8.0.33
     container_name: chooeatreservation-mysql-1
     healthcheck:
-      test: ["CMD-SHELL", "mysqladmin -uroot -p'$MYSQL_ROOT_PASSWORD' ping"]
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p'$MYSQL_ROOT_PASSWORD'"]
       interval: 10s
-      timeout: 5s
+      timeout: 10s
       retries: 5
+      start_period: 30s
     volumes:
       - ./src/main/resources/static:/docker-entrypoint-initdb.d
     environment:
@@ -29,9 +31,9 @@ services:
     ports:
       - "3306:3306"
     networks:
-      - mynetwork
+      - net
   redis:
-    image: redis
+    image: redis:3.2.12  # 指定使用 Redis 版本 3.2.12
     container_name: chooeatreservation-redis-1
     healthcheck:
       test: [ "CMD", "redis-cli", "ping" ]
@@ -41,6 +43,6 @@ services:
     ports:
       - "6379:6379"
     networks:
-      - mynetwork
+      - net
 networks:
-  mynetwork: {}
+  net: {}

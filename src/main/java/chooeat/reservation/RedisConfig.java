@@ -9,11 +9,11 @@ import redis.clients.jedis.JedisPoolConfig;
 
 @Configuration
 public class RedisConfig {
-	
-	@Value("localhost")
+
+	@Value("${redis.host}")
 	private String redisHost;
-	
-	@Value("6379")
+
+	@Value("${redis.port}")
 	private int redisPort;
 	
 //	@Bean
@@ -24,8 +24,9 @@ public class RedisConfig {
 	        JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
 	        // 配置 jedisPoolConfig
 
-	        JedisPool jedisPool = new JedisPool(jedisPoolConfig, "localhost", 6379);
-	        return jedisPool;
+			// 使用變量而不是直接的字串
+			JedisPool jedisPool = new JedisPool(jedisPoolConfig, redisHost, redisPort);
+			return jedisPool;
 	    }
 
 }

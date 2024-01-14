@@ -31,6 +31,7 @@ import chooeat.reservation.model.RestaurantVO;
 import chooeat.reservation.model.Result;
 import chooeat.reservation.service.ReservationService;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
 
 @RestController
 public class ReservationController {
@@ -49,6 +50,8 @@ public class ReservationController {
 	ReservationDao reservationDao;
 	@Autowired
 	RestaurantRepository restaurantRepository;
+	@Autowired
+	private JedisPool jedisPool;
 
 //	int count = 1;
 //	String index = "res:" + count;
@@ -92,7 +95,6 @@ public class ReservationController {
 	public Result reservationRedis(@RequestBody Map<String, Object> map) {
 		// 設定回傳物件
 		Result result = new Result();
-		Jedis jedis = new Jedis();
 		// 接前端參數
 		String dateTime = (String) map.get("date_time");
 		Integer reservationNumber = Integer.valueOf((String) map.get("ppl"));
@@ -110,27 +112,30 @@ public class ReservationController {
 					new Integer(restaurantId.intValue()));
 			
 			System.out.println("這裡的狀態是什麼" + status);
-
-			if (status == "success") {
+			try (Jedis jedis = jedisPool.getResource()) {
 				jedis.select(2);
-				// 設定要放進redis的map
-				HashMap<String, String> data = new HashMap<>();
-				data.put("accId", new Integer(acc_id.intValue()).toString());
-				data.put("restaurantId", new Integer(restaurantId.intValue()).toString());
-				data.put("reservationNumber", (String) map.get("ppl"));
-				data.put("reservationDateStartTime", (String) map.get("date_time"));
-				if (!text.isEmpty()) {
-					data.put("reservationNote", text);
-				} else {
-					data.put("reservationNote", "");
-				}
-				
-				jedis.hmset((String) map.get("date_time"), data);
 
-				System.out.println("存儲至 Redis 中的 key: " + (String) map.get("date_time"));
+				if (status == "success") {
+					jedis.select(2);
+					// 設定要放進redis的map
+					HashMap<String, String> data = new HashMap<>();
+					data.put("accId", new Integer(acc_id.intValue()).toString());
+					data.put("restaurantId", new Integer(restaurantId.intValue()).toString());
+					data.put("reservationNumber", (String) map.get("ppl"));
+					data.put("reservationDateStartTime", (String) map.get("date_time"));
+					if (!text.isEmpty()) {
+						data.put("reservationNote", text);
+					} else {
+						data.put("reservationNote", "");
+					}
+
+					jedis.hmset((String) map.get("date_time"), data);
+
+					System.out.println("存儲至 Redis 中的 key: " + (String) map.get("date_time"));
+				}
+				result.setStatus(status);
+				result.setIndex((String) map.get("date_time"));
 			}
-			result.setStatus(status);
-			result.setIndex((String) map.get("date_time"));
 			return result;
 
 		}
@@ -144,41 +149,41 @@ public class ReservationController {
 		Result result = new Result();
 
 		// 從redis抓出暫存的預約資料，設定給vo
-		Jedis jedis = new Jedis();
-		jedis.select(2);
-		Map<String, String> retrievedData = jedis.hgetAll(index);
-		ReservationVO reservationVO = new ReservationVO();
-		reservationVO.setAccId(Integer.valueOf(retrievedData.get("accId")));
-		reservationVO.setRestaurantId(Integer.valueOf(retrievedData.get("restaurantId")));
-		reservationVO.setReservationNumber(Integer.valueOf(retrievedData.get("reservationNumber")));
+		try (Jedis jedis = jedisPool.getResource()) {
+			jedis.select(2);
+			Map<String, String> retrievedData = jedis.hgetAll(index);
+			ReservationVO reservationVO = new ReservationVO();
+			reservationVO.setAccId(Integer.valueOf(retrievedData.get("accId")));
+			reservationVO.setRestaurantId(Integer.valueOf(retrievedData.get("restaurantId")));
+			reservationVO.setReservationNumber(Integer.valueOf(retrievedData.get("reservationNumber")));
 
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-		LocalDateTime dateTime = LocalDateTime.parse(retrievedData.get("reservationDateStartTime"), formatter);
-		Timestamp timestamp = Timestamp.valueOf(dateTime);
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+			LocalDateTime dateTime = LocalDateTime.parse(retrievedData.get("reservationDateStartTime"), formatter);
+			Timestamp timestamp = Timestamp.valueOf(dateTime);
 
-		reservationVO.setReservationDateStartTime(timestamp);
-		reservationVO.setReservationNote(retrievedData.get("reservationNote"));
+			reservationVO.setReservationDateStartTime(timestamp);
+			reservationVO.setReservationNote(retrievedData.get("reservationNote"));
 
-		System.out.println(reservationVO.toString());
+			System.out.println(reservationVO.toString());
 
-		// 預約成功，回傳訂單編號
-		int reservationId = reservationService.reservation(reservationVO);
-		// 刪除redis存放的資料
-		jedis.del(index);
-		jedis.close();
+			// 預約成功，回傳訂單編號
+			int reservationId = reservationService.reservation(reservationVO);
+			// 刪除redis存放的資料
+			jedis.del(index);
 
-		//清空鎖定值操作
-		Jedis jedis2 = new Jedis();
-		jedis2.select(0);
-		jedis2.del(retrievedData.get("reservationDateStartTime"));
-		jedis2.close();
 
-		if (reservationId != 0) {
-			result.setStatus("success");
-			reservationService.sendMail(reservationVO.getAccId(), reservationId);
-			result.setReservationId(reservationId);
-		} else {
-			result.setStatus("");
+			//清空鎖定值操作
+			jedis.select(0);
+			jedis.del(retrievedData.get("reservationDateStartTime"));
+
+
+			if (reservationId != 0) {
+				result.setStatus("success");
+				reservationService.sendMail(reservationVO.getAccId(), reservationId);
+				result.setReservationId(reservationId);
+			} else {
+				result.setStatus("");
+			}
 		}
 
 		return result;
